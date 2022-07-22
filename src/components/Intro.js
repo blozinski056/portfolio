@@ -1,10 +1,10 @@
 import React from "react"
 
 export default function Main() {
-  window.onload = function() {
-    let hand = document.querySelector('.intro-emoji');
-    console.log(hand);
-  }
+  let hand = document.querySelector('.intro-emoji');
+  const tl = gsap.timeline({defaults: {ease: "power1.out"}});
+  
+  
 
   return (
     <section className="intro-container">
