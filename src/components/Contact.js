@@ -13,7 +13,19 @@ export default function Contact() {
       });
       
       e.target.reset();
-  };
+  }
+
+  function openGithub() {
+    window.open("https://github.com/blozinski056", "_blank");
+  }
+
+  function openLinkedin() {
+    window.open("https://www.linkedin.com/in/bryce-lozinski", "_blank");
+  }
+
+  function openResume() {
+    window.open("./Bryce Lozinski 2022 Resume.pdf", "_blank");
+  }
 
   return (
     <section className="contact">
@@ -43,9 +55,9 @@ export default function Contact() {
       </form>
 
       <div className="contact-links reveal">
-        <img src="./images/github.png" alt="" />
-        <img src="./images/linkedin.png" alt="" />
-        <img src="./images/resume.png" alt="" />
+        <img src="./images/github.png" alt="" onClick={openGithub} />
+        <img src="./images/linkedin.png" alt="" onClick={openLinkedin} />
+        <img src="./images/resume.png" alt="" onClick={openResume} />
       </div>
     </section>
   )

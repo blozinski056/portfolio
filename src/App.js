@@ -18,7 +18,7 @@ export default function App() {
       let windowHeight = window.innerHeight;
       // element's distance from top of viewport
       let revealTop = allRevs[i].getBoundingClientRect().top;
-      let revealPoint = 100;
+      let revealPoint = 250;
 
       if(revealTop < windowHeight - revealPoint) {
         allRevs[i].classList.add('active');
