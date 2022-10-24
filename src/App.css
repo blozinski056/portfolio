@@ -23,14 +23,14 @@ section {
   justify-content: center;
   min-height: 100vh;
   min-width: 100vw;
-  padding: 20vh 20vw;
+  padding: 15% 20%;
 }
 
 .background {
   position: absolute;
   z-index: -1;
-  bottom: 20vh;
-  right: 20vw;
+  bottom: 10%;
+  right: 15%;
   font-size: 200px;
   text-shadow: 5px 5px 5px rgb(10, 10, 10);
   color: black;
@@ -100,7 +100,7 @@ section {
   background-color: transparent;
 }
 
-h3 {
+.nav-links-container > h3 {
   /* Must be relative for ::after objects */
   position: relative;
   padding: 0 5px;
@@ -111,12 +111,12 @@ h3 {
   font-weight: 500;
 }
 
-h3:hover {
-  transition: color 0.6s ease;
+.nav-links-container > h3:hover {
+  transition: color 0.5s ease;
   color: rgb(0, 223, 0);
 }
 
-h3::after {
+.nav-links-container > h3::after {
   content: "";
   position: absolute;
   background-color: rgb(0, 223, 0);
@@ -130,7 +130,7 @@ h3::after {
   opacity: 0;
 }
 
-h3:hover:after {
+.nav-links-container > h3:hover:after {
   /*Duration to get to h3:hover:before*/
   transition: 
     transform 0.5s,
@@ -185,11 +185,18 @@ h3:hover:after {
   color: gray;
   font-weight: 500;
   font-size: 20px;
+  transition-duration: 0.3s;
 
   animation-name: appear;
   animation-duration: 1s;
   animation-delay: 4s;
   animation-fill-mode: forwards;
+}
+
+.intro-resume:hover, .intro-contact:hover {
+  transition: border 0.5s ease, color 0.5s ease;
+  border: 2px solid rgb(0, 223, 0);
+  color: rgb(0, 223, 0);
 }
 
 /* INTRO APPEARANCE */
@@ -281,40 +288,94 @@ h3:hover:after {
 /* ABOUT SECTION */
 /*****************/
 .about {
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: left;
 }
 
 .body {
-  position: relative;
-  width: 700px;
+  width: 1150px;
   font-size: 30px;
   color: white;
 }
 
+.body.reveal {
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.body.reveal.active {
+  transform: translateX(0px);
+  opacity: 1;
+  transition: all 0.7s ease;
+}
+
 .about-skills {
-  position: relative;
   color: rgb(0, 223, 0);
   cursor: pointer;
+}
+
+.skills-container {
+  margin-top: 50px;
+  height: 100px;
+  align-self: flex-end;
+  justify-content: flex-end;
+}
+
+.skills-container > img {
+  height: 100px;
+  width: 100px;
+}
+
+.skills-container.reveal {
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.skills-container.reveal.active {
+  transform: translateX(0px);
+  opacity: 1;
+  transition: all 0.7s ease;
 }
 
 /****************/
 /* WORK SECTION */
 /****************/
+.work {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 5%;
+}
 
 /*******************/
 /* CONTACT SECTION */
 /*******************/
 .contact {
   align-items: start;
-  justify-content: space-between;
 }
 
 .contact-container {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 400px;
+  width: 500px;
+}
+
+.contact-container.reveal {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 0.7s ease;
+}
+
+.contact-container.reveal.active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: 1s ease;
 }
 
 .contact-title {
@@ -381,9 +442,29 @@ h3:hover:after {
   color: black;
 }
 
-
 .contact-links {
-  background-color: gray;
   height: 300px;
   width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.contact-links > img {
+  height: 100px;
+  width: 100px;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.contact-links.reveal {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 0.5s ease;
+}
+
+.contact-links.reveal.active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: 0.7s ease;
 }

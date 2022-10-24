@@ -1,10 +1,13 @@
 import React from "react"
 
 export default function Intro() {
-
   function toSection(num) {
     const value = num * (window.innerHeight);
     window.scrollTo({top: value, behavior: "smooth"})
+  }
+
+  function openResume() {
+    window.open("./Bryce Lozinski 2022 Resume.pdf", "_blank");
   }
 
   return (
@@ -17,19 +20,18 @@ export default function Intro() {
       </div>
 
       <div className="intro-buttons-container">
-        <a
-          href="./Bryce Lozinski 2022 Resume.pdf"
+        <button
           className="intro-resume"
-          target="_blank"
+          onClick={openResume}
         >
           RESUME
-        </a>
-        <a
+        </button>
+        <button
+          className="intro-contact"
           onClick={() => toSection(3)}
-          className="intro-resume"
         >
           CONTACT
-        </a>
+        </button>
       </div>
         
     </section>
