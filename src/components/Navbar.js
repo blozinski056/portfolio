@@ -11,7 +11,8 @@ export default function Navbar() {
       {/*Logo in top left corner*/}
       <div className="logo-container">
         <h1 className="logo" onClick={() => toSection(0)}>B</h1>
-        <div className="logo-box" onClick={() => toSection(0)}></div>
+        <div className="logo-box-1" onClick={() => toSection(0)}></div>
+        <div className="logo-box-2" onClick={() => toSection(0)}></div>
       </div>
 
       {/*Links in top right corner*/}

@@ -18,12 +18,13 @@ export default function App() {
       let windowHeight = window.innerHeight;
       // element's distance from top of viewport
       let revealTop = allRevs[i].getBoundingClientRect().top;
-      let revealPoint = 250;
 
-      if(revealTop < windowHeight - revealPoint) {
+      if(allRevs[i].classList.contains("project-video")) {
+        revealTop = allRevs[i].getBoundingClientRect().bottom;
+      }
+
+      if(revealTop < windowHeight * 0.8) {
         allRevs[i].classList.add('active');
-      } else {
-        allRevs[i].classList.remove('active');
       }
     }
   }

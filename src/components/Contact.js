@@ -30,34 +30,35 @@ export default function Contact() {
   return (
     <section className="contact">
       <h1 className="background">CONTACT</h1>
+      <div className="contact-container">
+        <form className="contact-form reveal" onSubmit={sendEmail} autoComplete="off">
+          <h1 className="contact-title">Send a Message</h1>
+          <div className="input name">
+            <input type="text" required="required" name="name"/>
+            <span>Name</span>
+          </div>
+          <div className="input email">
+            <input type="text" required="required" name="email"/>
+            <span>Email</span>
+          </div>
+          <div className="input message">
+            <textarea 
+              required="required" 
+              name="message"
+              >
+            </textarea>
+            <span>Message</span>
+          </div>
+          <div className="submit">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
 
-      <form className="contact-container reveal" onSubmit={sendEmail} autoComplete="off">
-        <h1 className="contact-title">Send Message</h1>
-        <div className="input name">
-          <input type="text" required="required" name="name"/>
-          <span>Name</span>
+        <div className="contact-links reveal">
+          <img src="./images/github.png" alt="" onClick={openGithub} />
+          <img src="./images/linkedin.png" alt="" onClick={openLinkedin} />
+          <img src="./images/resume.png" alt="" onClick={openResume} />
         </div>
-        <div className="input email">
-          <input type="text" required="required" name="email"/>
-          <span>Email</span>
-        </div>
-        <div className="input message">
-          <textarea 
-            required="required" 
-            name="message"
-            >
-          </textarea>
-          <span>Message</span>
-        </div>
-        <div className="submit">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-
-      <div className="contact-links reveal">
-        <img src="./images/github.png" alt="" onClick={openGithub} />
-        <img src="./images/linkedin.png" alt="" onClick={openLinkedin} />
-        <img src="./images/resume.png" alt="" onClick={openResume} />
       </div>
     </section>
   )
