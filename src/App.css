@@ -591,7 +591,6 @@ section {
 }
 .work-container .project-video.reveal {
   opacity: 0;
-  border: inset 5px white;
 }
 .work-container .project-video.reveal.active {
   opacity: 1;

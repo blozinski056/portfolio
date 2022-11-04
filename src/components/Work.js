@@ -14,7 +14,7 @@ export default function Work() {
           <p>An ecommerce website for mainstream anime merchandise.
             <br /><em>HTML5, SCSS, React.js</em>
           </p>
-          <a href="" ></a>
+          {/* <a href="" ></a> */}
         </div>
 
         <div className="project reveal">
@@ -22,7 +22,7 @@ export default function Work() {
           <p>When you and your friends are deciding which movie to cross off your never-ending list, use Movie Tracker to compare the movies you have and have not seen.
             <br /><em>HTML5, CSS3, React.js</em>
           </p>
-          <a href="" ></a>
+          {/* <a href="" ></a> */}
         </div>
 
         <div className="project reveal">
@@ -30,7 +30,7 @@ export default function Work() {
           <p>A reminder app with colors and animations to calm your stress when you have a lot on your plate.
             <br /><em>HTML5, CSS3, React.js</em>
           </p>
-          <a href="" ></a>
+          {/* <a href="" ></a> */}
         </div>
 
         <div className="project-video reveal">
