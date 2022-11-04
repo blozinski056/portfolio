@@ -582,25 +582,47 @@ section {
   opacity: 1;
   transition: all 0.7s ease;
 }
-.work-container .project.reveal h3 {
+.work-container .project.reveal h1 {
   color: rgb(0, 223, 0);
   cursor: pointer;
+  font-size: 24px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
-.work-container .project.reveal p > em {
+.work-container .project.reveal p {
   color: gray;
+  font-weight: 500;
 }
 .work-container .project-video.reveal {
   opacity: 0;
+  border: inset 5px rgb(0, 116, 0);
 }
 .work-container .project-video.reveal.active {
   opacity: 1;
   transition: opacity 1.5s ease;
   transition-delay: 0.3s;
 }
-.work-container .video-player.reveal {
+.work-container .video-player {
   height: 100%;
   width: 100%;
   position: absolute;
+  transition: 1s ease;
+}
+@media (max-width: 700px) {
+  .work-container .expand {
+    transform: scale(150%);
+  }
+}
+@media (min-width: 701px) {
+  .work-container .expand {
+    transform: scale(200%) translate(-23%, 0%);
+  }
+}
+.work-container .expand {
+  transition: 1s ease;
+  transition-delay: 0.2s;
+  cursor: pointer;
 }
 
 /*******************/

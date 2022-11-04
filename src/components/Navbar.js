@@ -18,7 +18,7 @@ export default function Navbar() {
       {/*Links in top right corner*/}
       <div className="nav-links-container">
         <h3 onClick={() => toSection(1)}>About</h3>
-        <h3 onClick={() => toSection(2)}>Work</h3>
+        <h3 onClick={() => toSection(2)}>Projects</h3>
         <h3 onClick={() => toSection(3)}>Contact</h3>
       </div>
     </div>
