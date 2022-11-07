@@ -5,10 +5,6 @@ export default function Work() {
   const [vid2, setVid2] = React.useState(false);
   const [vid3, setVid3] = React.useState(false);
 
-  React.useEffect(() => {
-    
-  }, [])
-
   function open(url) {
     window.open(url, "_blank");
   }
@@ -46,7 +42,6 @@ export default function Work() {
         <div className="project reveal">
           <h1 
             onClick={() => open("https://github.com/blozinski056/anime-ecommerce")}
-            // onMouseOver={() => changeSrc("./videos/anime-ecommerce.mp4")}
             onMouseOver={vid1On}
           >
             WeebSite
@@ -58,7 +53,6 @@ export default function Work() {
         <div className="project reveal">
           <h1 
             onClick={() => open("https://github.com/blozinski056/movie-list")}
-            // onMouseOver={() => changeSrc("./videos/movie-list.mp4")}
             onMouseOver={vid2On}
           >
             MovieTracker
@@ -70,7 +64,6 @@ export default function Work() {
         <div className="project reveal">
           <h1 
             onClick={() => open("https://github.com/blozinski056/reminder-app")}
-            // onMouseOver={() => changeSrc("./videos/reminder-app.mp4")}
             onMouseOver={vid3On}
           >
             RemindMe

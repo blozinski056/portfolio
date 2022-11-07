@@ -53,7 +53,6 @@ export default function Contact() {
             <button type="submit">Submit</button>
           </div>
         </form>
-
         <div className="contact-links reveal">
           <img src="./images/github.png" alt="" onClick={openGithub} />
           <img src="./images/linkedin.png" alt="" onClick={openLinkedin} />
