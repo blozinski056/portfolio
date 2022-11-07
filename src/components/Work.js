@@ -47,7 +47,7 @@ export default function Work() {
             WeebSite
           </h1>
           <p>
-            An ecommerce website for your favorite mainstream anime merchandise.
+            An ecommerce website that is a hub of for mainstream anime merchandise and anime fans.
           </p>
         </div>
         <div className="project reveal">
@@ -58,7 +58,7 @@ export default function Work() {
             MovieTracker
           </h1>
           <p>
-            A movie list website using The Movie Database API. When you and your friends are deciding which movie to cross off your never-ending list, use Movie Tracker to compare the movies you have and have not seen.
+            A movie list website utilizing The Movie Database API so that you and your friends can compare your movies and cross them off of your never-ending list.
           </p>
         </div>
         <div className="project reveal">
@@ -69,7 +69,7 @@ export default function Work() {
             RemindMe
           </h1>
           <p>
-            A CRUD reminder website with colors and animations to calm your stress when you have a lot on your plate.
+            A CRUD reminder website to keep you up to date with your long list of tasks.
           </p>
         </div>
         <div className="project-video reveal" onMouseEnter={() => isInside(true)} onMouseLeave={() => isInside(false)}>
