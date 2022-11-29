@@ -29,7 +29,7 @@ export default function Contact() {
 
   return (
     <section className="contact">
-      {/* <h1 className="background">CONTACT</h1> */}
+      <h1 className="background">CONTACT</h1>
       <div className="contact-container">
         <form className="contact-form reveal" onSubmit={sendEmail} autoComplete="off">
           <h1 className="contact-title">Send a Message</h1>

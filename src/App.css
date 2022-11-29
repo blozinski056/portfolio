@@ -199,9 +199,8 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  color: white;
+  color: rgb(230, 255, 255);
   font-family: "Montserrat", sans-serif;
-  scrollbar-width: none;
 }
 
 ::-webkit-scrollbar {
@@ -209,7 +208,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: rgb(26, 26, 26);
 }
 
 section {
@@ -229,7 +228,7 @@ section {
   right: 15%;
   font-size: 150px;
   text-shadow: 5px 5px 5px rgb(10, 10, 10);
-  color: black;
+  color: rgb(26, 26, 26);
 }
 
 @media (max-width: 1400px) {
@@ -263,9 +262,8 @@ section {
 }
 .navbar .logo-container .logo {
   height: 40px;
-  color: white;
+  color: rgb(230, 255, 255);
   cursor: pointer;
-  z-index: 10;
 }
 .navbar .logo-container .logo-box-1, .navbar .logo-container .logo-box-2 {
   height: 50px;
@@ -275,14 +273,14 @@ section {
   cursor: pointer;
 }
 .navbar .logo-container .logo-box-1 {
-  border-top: 3px solid rgb(0, 223, 0);
-  border-right: 3px solid rgb(0, 223, 0);
+  border-top: 3px solid rgb(0, 167, 130);
+  border-right: 3px solid rgb(0, 167, 130);
   -webkit-animation: spin1 7s linear infinite;
           animation: spin1 7s linear infinite;
 }
 .navbar .logo-container .logo-box-2 {
-  border-left: 3px solid rgb(0, 223, 0);
-  border-bottom: 3px solid rgb(0, 223, 0);
+  border-left: 3px solid rgb(0, 167, 130);
+  border-bottom: 3px solid rgb(0, 167, 130);
   -webkit-animation: spin2 7s linear infinite;
           animation: spin2 7s linear infinite;
 }
@@ -304,8 +302,9 @@ section {
   flex-direction: column;
 }
 .intro h1 {
+  font-size: 150px;
   letter-spacing: 0.5px;
-  color: rgb(0, 223, 0);
+  color: rgb(0, 167, 130);
 }
 .intro h5 {
   font-size: 0.5em;
@@ -336,8 +335,8 @@ section {
 }
 .intro .intro-buttons-container .intro-resume:hover, .intro .intro-buttons-container .intro-contact:hover {
   transition: border 0.5s ease, color 0.5s ease;
-  border: 2px solid rgb(0, 223, 0);
-  color: rgb(0, 223, 0);
+  border: 2px solid rgb(0, 167, 130);
+  color: rgb(0, 167, 130);
 }
 
 /*****************/
@@ -371,7 +370,7 @@ section {
   margin: 0 50px;
 }
 .about-container .body.reveal {
-  color: white;
+  color: rgb(230, 255, 255);
   transform: translateX(-500px);
   opacity: 0;
   transition: all 1s ease;
@@ -403,118 +402,41 @@ section {
 /* WORK SECTION */
 /****************/
 @media (max-width: 700px) {
-  .work-container {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    width: auto;
-    grid-template-rows: repeat(3, auto) 4fr;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    transform: translateY(-10%);
+  .work {
+    display: grid;
+    padding: 20px;
+    grid-template-rows: 20% 20% 20%;
+    row-gap: 10px;
   }
 }
 @media (min-width: 701px) {
-  .work-container {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    width: 1400px;
-    grid-template-rows: repeat(3, auto);
-    grid-template-columns: 1fr 2fr;
-    row-gap: 20px;
-    transform: translateY(-15%);
+  .work {
+    display: grid;
+    padding: 100px;
+    grid-template-columns: 30% 30% 30%;
+    -moz-column-gap: 50px;
+         column-gap: 50px;
   }
 }
-.work-container {
-  display: grid;
-  padding: 0 50px;
-}
-@media (max-width: 700px) {
-  .work-container .project.reveal {
-    grid-column: 1/2;
-  }
-  .work-container .project-video {
-    position: relative;
-    grid-column: 1/2;
-    grid-row: 4/5;
-    width: 80%;
-    padding-bottom: 45%;
-    justify-self: center;
-    align-self: start;
-  }
-}
-@media (min-width: 701px) {
-  .work-container .project.reveal {
-    grid-column: 1/2;
-  }
-  .work-container .project-video {
-    position: relative;
-    grid-column: 2/3;
-    grid-row: 1/4;
-    width: 80%;
-    padding-bottom: 45%;
-    justify-self: end;
-    align-self: center;
-  }
-}
-@media (max-width: 950px) {
-  .work-container .project.reveal {
-    font-size: 12px;
-  }
-}
-.work-container .project.reveal {
+.work .project.reveal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   transform: translateX(1000px);
   opacity: 0;
   transition: all 0.5s ease;
-  cursor: default;
+  cursor: pointer;
 }
-.work-container .project.reveal.active {
+.work .project.reveal.active {
   transform: translateX(0px);
   opacity: 1;
   transition: all 0.7s ease;
 }
-.work-container .project.reveal h1 {
-  color: rgb(0, 223, 0);
-  cursor: pointer;
-  font-size: 24px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.work-container .project.reveal p {
-  color: gray;
-  font-weight: 500;
-}
-.work-container .project-video.reveal {
-  opacity: 0;
-  border: inset 5px rgb(0, 116, 0);
-}
-.work-container .project-video.reveal.active {
-  opacity: 1;
-  transition: opacity 1.5s ease;
-  transition-delay: 0.3s;
-}
-.work-container .video-player {
-  height: 100%;
+.work .video-player {
+  height: auto;
   width: 100%;
-  position: absolute;
   transition: 1s ease;
-}
-@media (max-width: 700px) {
-  .work-container .expand {
-    transform: scale(150%);
-  }
-}
-@media (min-width: 701px) {
-  .work-container .expand {
-    transform: scale(200%) translate(-23%, 0%);
-  }
-}
-.work-container .expand {
-  transition: 1s ease;
-  transition-delay: 0.2s;
-  cursor: pointer;
 }
 
 /*******************/
@@ -568,11 +490,11 @@ section {
   transition: 1s ease;
 }
 .contact-container .contact-form.reveal .contact-title {
-  color: rgb(0, 223, 0);
+  color: rgb(0, 167, 130);
   font-size: 30px;
 }
 .contact-container .contact-form.reveal .input.message {
-  height: 45px;
+  height: 60px;
   width: 100%;
 }
 .contact-container .contact-form.reveal .input {
@@ -584,9 +506,9 @@ section {
   background-color: transparent;
   cursor: text;
   border: none;
-  border-bottom: solid 2px rgb(0, 223, 0);
+  border-bottom: solid 2px rgb(0, 167, 130);
   outline: none;
-  color: rgb(0, 223, 0);
+  color: rgb(0, 167, 130);
   font-size: 16px;
   font-weight: 500;
 }
@@ -595,13 +517,13 @@ section {
   width: 100%;
 }
 .contact-container .contact-form.reveal .input textarea {
-  height: 45px;
+  height: 60px;
   width: 100%;
   resize: none;
 }
 .contact-container .contact-form.reveal .input span {
   position: absolute;
-  color: rgb(0, 223, 0);
+  color: rgb(0, 167, 130);
   left: 0;
   bottom: 5px;
   font-size: 16px;
@@ -615,21 +537,21 @@ section {
 }
 .contact-container .contact-form.reveal .input textarea:focus ~ span, .contact-container .contact-form.reveal .input textarea:valid ~ span {
   color: rgb(53, 53, 53);
-  transform: translateY(-40px);
+  transform: translateY(-55px);
 }
 .contact-container .contact-form.reveal .submit button {
   height: 30px;
   width: 70px;
-  border: 1px solid rgb(0, 223, 0);
+  border: 1px solid rgb(0, 167, 130);
   border-radius: 4px;
   cursor: pointer;
   font-weight: 700;
-  background-color: black;
-  color: rgb(0, 223, 0);
+  background-color: rgb(26, 26, 26);
+  color: rgb(0, 167, 130);
 }
 .contact-container .contact-form.reveal .submit button:hover {
   transition: 0.5s ease;
-  background-color: rgb(0, 223, 0);
+  background-color: rgb(0, 167, 130);
   color: black;
 }
 @media (max-width: 800px) {

@@ -1,5 +1,7 @@
 // VARIABLES
-$color-green: rgb(0, 223, 0);
+$color-green: rgb(0, 167, 130);
+$color-white: rgb(230, 255, 255);
+$color-black: rgb(26, 26, 26);
 
 // MIXINS
 @mixin h-w($height: 50px, $width: 50px) {
@@ -95,9 +97,9 @@ $color-green: rgb(0, 223, 0);
 * {
   margin: 0;
   box-sizing: border-box;
-  color: white;
+  color: $color-white;
   font-family: 'Montserrat', sans-serif;
-  scrollbar-width: none;
+  // border: 1px solid red;
 }
 
 ::-webkit-scrollbar {
@@ -105,13 +107,19 @@ $color-green: rgb(0, 223, 0);
 }
 
 body {
-  background-color: black;
+  background-color: $color-black;
 }
+
+// .container {
+//   scroll-snap-type: y mandatory;
+//   overflow-y: auto;
+// }
 
 section {
   @include h-w(100vh, 100vw);
   @include flexbox;
   position: relative;
+  // scroll-snap-align: start;
 }
 
 .background {
@@ -121,7 +129,7 @@ section {
   right: 15%;
   font-size: 150px;
   text-shadow: 5px 5px 5px rgb(10, 10, 10);
-  color: black;
+  color: $color-black;
 }
 
 @media (max-width: 1400px) {
@@ -153,9 +161,8 @@ section {
 
     .logo {
       height: 40px;
-      color: white;
+      color: $color-white;
       cursor: pointer;
-      z-index: 10;
     }
     
     .logo-box-1, .logo-box-2 {
@@ -198,6 +205,7 @@ section {
   flex-direction: column;
 
   h1 {
+    font-size: 150px;
     letter-spacing: 0.5px;
     color: $color-green;
     // MAKE LETTERS FALL INTO PLACE
@@ -267,7 +275,7 @@ section {
   margin: 0 50px;
   
   .body.reveal {
-    color: white;
+    color: $color-white;
 
     transform: translateX(-500px);
     opacity: 0;
@@ -306,127 +314,41 @@ section {
 /* WORK SECTION */
 /****************/
 @media (max-width: 700px) {
-  .work-container {
-    @include h-w(fit-content, auto);
-    grid-template-rows: repeat(3, auto) 4fr;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    transform: translateY(-10%);
+  .work {
+    display: grid;
+    padding: 20px;
+    grid-template-rows: 20% 20% 20%;
+    row-gap: 10px;
   }
 }
 
 @media (min-width: 701px) {
-  .work-container {
-    @include h-w(fit-content, 1400px);
-    grid-template-rows: repeat(3, auto);
-    grid-template-columns: 1fr 2fr;
-    row-gap: 20px;
-    transform: translateY(-15%);
+  .work {
+    display: grid;
+    padding: 100px;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 50px;
   }
 }
 
-.work-container {
-  // @include h-w(66vh, 100vw);
-
-  display: grid;
-  padding: 0 50px;
-
-  @media (max-width: 700px) {
-    .project.reveal {
-      grid-column: 1 / 2;
-    }
-
-    .project-video {
-      position: relative;
-      grid-column: 1 / 2;
-      grid-row: 4 / 5;
-      width: 80%;
-      padding-bottom: 45%;
-      justify-self: center;
-      align-self: start;
-    }
-  }
-
-  @media (min-width: 701px) {
-    .project.reveal {
-      grid-column: 1 / 2;
-    }
-
-    .project-video {
-      position: relative;
-      grid-column: 2 / 3;
-      grid-row: 1 / 4;
-      width: 80%;
-      padding-bottom: 45%;
-      justify-self: end;
-      align-self: center;
-    }
-  }
-  
-  @media (max-width: 950px) {
-    .project.reveal {
-      font-size: 12px;
-    }
-  }
-
+.work {
   .project.reveal {
+    @include flexbox(column, center, center);
     transform: translateX(1000px);
     opacity: 0;
     transition: all 0.5s ease;
-    cursor: default;
+    cursor: pointer;
 
     &.active {
       transform: translateX(0px);
       opacity: 1;
       transition: all 0.7s ease;
     }
-
-    h1 {
-      color:$color-green;
-      cursor: pointer;
-      font-size: 24px;
-      width: fit-content;
-    }
-
-    p {
-      color: gray;
-      font-weight: 500;
-    }
-  }
-
-  .project-video.reveal {
-    opacity: 0;
-    border: inset 5px rgb(0, 116, 0);
-  }
-
-  .project-video.reveal.active {
-    opacity: 1;
-    transition: opacity 1.5s ease;
-    transition-delay: 0.3s;
   }
 
   .video-player {
-    @include h-w(100%, 100%);
-    position: absolute;
+    @include h-w(auto, 100%);
     transition: 1s ease;
-  }
-
-  @media (max-width: 700px) {
-    .expand {
-      transform: scale(150%);
-    }
-  }
-
-  @media (min-width: 701px) {
-    .expand {
-      transform: scale(200%) translate(-23%, 0%);
-    }
-  }
-
-  .expand {
-    transition: 1s ease;
-    transition-delay: 0.2s;
-    cursor: pointer;
   }
 }
 
@@ -488,7 +410,7 @@ section {
     }
 
     .input.message {
-      @include h-w(45px, 100%);
+      @include h-w(60px, 100%);
     }
 
     .input {
@@ -511,7 +433,7 @@ section {
       }
 
       & textarea {
-        @include h-w(45px, 100%);
+        @include h-w(60px, 100%);
         resize: none;
       }
 
@@ -535,7 +457,7 @@ section {
       & textarea:focus ~ span,
       & textarea:valid ~ span {
         color: rgb(53, 53, 53);
-        transform: translateY(-40px);
+        transform: translateY(-55px);
       }
     }
     
@@ -545,7 +467,7 @@ section {
       border-radius: 4px;
       cursor: pointer;
       font-weight: 700;
-      background-color: black;
+      background-color: $color-black;
       color: $color-green;
     }
     
