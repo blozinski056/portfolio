@@ -2,7 +2,6 @@ import React from "react"
 import './App.css'
 import Navbar from "./components/Navbar.js"
 import Intro from "./components/Intro.js"
-import About from "./components/About.js"
 import Work from "./components/Work.js"
 import Contact from "./components/Contact.js"
 
@@ -10,6 +9,7 @@ export default function App() {
 
   window.addEventListener('scroll', reveal);
 
+  // Adds 'active' to the className when the top of the element is <80% from the top of the viewport
   function reveal() {
     let allRevs = document.querySelectorAll(".reveal");
 
@@ -37,7 +37,6 @@ export default function App() {
     <div>
       <Navbar />
       <Intro />
-      <About />
       <Work />
       <Contact />
     </div>

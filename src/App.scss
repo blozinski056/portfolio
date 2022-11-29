@@ -92,7 +92,6 @@ $color-green: rgb(0, 223, 0);
 ///////////
 // STYLING
 ///////////
-
 * {
   margin: 0;
   box-sizing: border-box;
@@ -140,107 +139,43 @@ section {
 /******************/
 /* NAVBAR SECTION */
 /******************/
-@media (max-width: 600px) {
-  .navbar {
-    padding: 40px;
-  }
-}
-
-@media (min-width: 601px) {
-  .navbar {
-    padding: 30px 50px;
-  }
-}
-
 .navbar {
-  @include flexbox($justify-content: space-between);
-  @include h-w(80px, 100vw);
+  @include h-w(auto, 100vw);
+  display: flex;
   position: fixed;
+  padding: 30px 40px;
   top: 0;
   z-index: 10;
 
   .logo-container {
     @include flexbox;
+    left: 0;
 
     .logo {
       height: 40px;
       color: white;
       cursor: pointer;
-      background-color: transparent;
       z-index: 10;
     }
     
-    .logo-box-1 {
+    .logo-box-1, .logo-box-2 {
       @include h-w;
       position: absolute;
-      background-color: transparent;
+      transform: rotate(45deg);
+      cursor: pointer;
+    }
+
+    .logo-box-1 {
       border-top: 3px solid $color-green;
       border-right: 3px solid $color-green;
-      transform: rotate(45deg);
       animation: spin1 7s linear infinite;
-      cursor: pointer;
     }
 
     .logo-box-2 {
-      @include h-w;
-      position: absolute;
-      background-color: transparent;
       border-left: 3px solid $color-green;
       border-bottom: 3px solid $color-green;
-      transform: rotate(45deg);
       animation: spin2 7s linear infinite;
-      cursor: pointer;
     }
-  }
-  
-  .nav-links-container {
-    @include flexbox;
-    gap: 40px;
-  }
-
-  @media (max-width: 600px) {
-    .nav-links-container {
-      font-size: 12px;
-      gap: 20px;
-    }
-  }
-  
-  .nav-links-container > h3 {
-    /* Must be relative for ::after objects */
-    position: relative;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    color: white;
-    transition-duration: 0.3s;
-    font-weight: 500;
-  }
-  
-  .nav-links-container > h3:hover {
-    transition: color 0.5s ease;
-    color: $color-green;
-  }
-  
-  .nav-links-container > h3::after {
-    @include h-w(2px, 100%);
-    content: "";
-    position: absolute;
-    background-color: $color-green;
-    transition-duration: 0.3s;
-    transform: scaleX(0);
-    left: 0px;
-    bottom: 0px;
-    opacity: 0;
-  }
-  
-  .nav-links-container > h3:hover:after {
-    transition: 
-      transform 0.5s,
-      opacity 0.5s,
-      bottom 0.3s;
-    position: absolute;
-    transform: scaleX(100%);
-    bottom: -10px;
-    opacity: 1;
   }
 }
 
@@ -261,65 +196,16 @@ section {
 
 .intro {
   flex-direction: column;
-  letter-spacing: 0.5px;
 
-  .intro-container {
-    display: grid;
-    grid-template-rows: repeat(2, auto);
-    grid-template-columns: repeat(3, auto);
+  h1 {
+    letter-spacing: 0.5px;
+    color: $color-green;
+    // MAKE LETTERS FALL INTO PLACE
+    // animation: fall 3s steps(14, end);
+  }
 
-    .intro-hi, .intro-im, .intro-bryce, .intro-title {
-      opacity: 0;
-      cursor: default;
-    }
-
-    /* INTRO APPEARANCE */
-    .intro-hi {
-      animation: 0.7s ease 0.5s forwards appear;
-    }
-
-    /* EMOJI ANIMATION */
-    .intro-hi::after {
-      content: "👋";
-      position: absolute;
-      left: -10px;
-      top: 0;
-      opacity: 0;
-      z-index: -1;
-      transform-origin: 70% 70%;
-
-      animation: 
-        2.5s ease 0.5s emoji-rise,
-        1.5s ease 0.8s emoji-opacity,
-        2s ease 1s wave-animation;
-    }
-    
-    .intro-im {
-      animation: 0.7s ease 2s forwards appear;
-    }
-    
-    .intro-bryce {
-      animation: 0.7s ease 2.3s forwards appear;
-    }
-
-    @media (max-width: 700px) {
-      .intro-title {
-        font-size: 10px;
-      }
-    }
-
-    @media (min-width: 701px) {
-      .intro-title {
-        font-size: 18px;
-      }
-    }
-    
-    .intro-title {
-      grid-column: 3;
-      animation: 0.7s ease 3s forwards appear;
-      margin-top: 20px;
-      justify-self: center;
-    }
+  h5 {
+    font-size: 0.5em;
   }
   
   .intro-buttons-container {
@@ -341,7 +227,7 @@ section {
     
       animation-name: appear;
       animation-duration: 1s;
-      animation-delay: 4s;
+      animation-delay: 0s; // CHANGE DELAY BASED ON OTHER ANIMATIONS
       animation-fill-mode: forwards;
     }
     
@@ -440,6 +326,8 @@ section {
 }
 
 .work-container {
+  // @include h-w(66vh, 100vw);
+
   display: grid;
   padding: 0 50px;
 
