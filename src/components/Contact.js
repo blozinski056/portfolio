@@ -1,18 +1,27 @@
 import React from "react";
-import emailjs from '@emailjs/browser'
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   function sendEmail(e) {
     e.preventDefault();
 
-    emailjs.sendForm('service_zdxf7vt', 'template_2pkxd0h', e.target, 'gBvn5WmiekS0rlgS4')
-      .then((result) => {
+    emailjs
+      .sendForm(
+        "service_zdxf7vt",
+        "template_2pkxd0h",
+        e.target,
+        "gBvn5WmiekS0rlgS4"
+      )
+      .then(
+        (result) => {
           console.log(result.text);
-      }, (error) => {
+        },
+        (error) => {
           console.log(error.text);
-      });
-      
-      e.target.reset();
+        }
+      );
+
+    e.target.reset();
   }
 
   function openGithub() {
@@ -29,24 +38,24 @@ export default function Contact() {
 
   return (
     <section className="contact">
-      <h1 className="background">CONTACT</h1>
+      {/* <h1 className="background">CONTACT</h1> */}
       <div className="contact-container">
-        <form className="contact-form reveal" onSubmit={sendEmail} autoComplete="off">
+        <form
+          className="contact-form reveal"
+          onSubmit={sendEmail}
+          autoComplete="off"
+        >
           <h1 className="contact-title">Send a Message</h1>
           <div className="input name">
-            <input type="text" required="required" name="name"/>
+            <input type="text" required="required" name="name" />
             <span>Name</span>
           </div>
           <div className="input email">
-            <input type="text" required="required" name="email"/>
+            <input type="text" required="required" name="email" />
             <span>Email</span>
           </div>
           <div className="input message">
-            <textarea 
-              required="required" 
-              name="message"
-              >
-            </textarea>
+            <textarea required="required" name="message"></textarea>
             <span>Message</span>
           </div>
           <div className="submit">
@@ -60,5 +69,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }

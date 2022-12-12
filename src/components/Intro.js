@@ -1,9 +1,9 @@
-import React from "react"
+import React from "react";
 
 export default function Intro() {
   function contact() {
     const c = document.querySelector(".contact").getBoundingClientRect().top;
-    window.scrollTo({top: c, behavior: "smooth"})
+    window.scrollTo({ top: c, behavior: "smooth" });
   }
 
   function openResume() {
@@ -13,7 +13,7 @@ export default function Intro() {
   return (
     <section className="intro">
       <h1>Bryce Lozinski</h1>
-      <h5>FRONT-END DEVELOPER</h5>
+      <h5>FULL STACK WEB DEVELOPER</h5>
 
       <div className="intro-buttons-container">
         <button className="intro-resume" onClick={openResume}>
@@ -23,7 +23,6 @@ export default function Intro() {
           CONTACT
         </button>
       </div>
-        
     </section>
-  )
+  );
 }

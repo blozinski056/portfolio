@@ -4,16 +4,16 @@ $color-white: rgb(230, 255, 255);
 $color-black: rgb(26, 26, 26);
 
 // MIXINS
-@mixin h-w($height: 50px, $width: 50px) {
-  height: $height;
+@mixin w-h($width: 50px, $height: 50px) {
   width: $width;
+  height: $height;
 }
 
-@mixin flexbox($flex-direction: row, $align-items: center, $justify-content: center) {
+@mixin flexbox($fd: row, $ai: center, $jc: center) {
   display: flex;
-  flex-direction: $flex-direction;
-  align-items: $align-items;
-  justify-content: $justify-content;
+  flex-direction: $fd;
+  align-items: $ai;
+  justify-content: $jc;
 }
 
 // KEYFRAMES
@@ -47,39 +47,6 @@ $color-black: rgb(26, 26, 26);
   }
 }
 
-@media (max-width: 700px) {
-  @keyframes emoji-rise {
-    0% {top: 0;}
-    50% {top: -70px;}
-    100% {top: 0;}
-  }
-}
-
-@media (min-width: 701px) {
-  @keyframes emoji-rise {
-    0% {top: 0;}
-    50% {top: -170px;}
-    100% {top: 0;}
-  }
-}
-
-@keyframes emoji-opacity {
-  0% {opacity: 0;}
-  50% {opacity: 1;}
-  100% {opacity: 0;}
-}
-
-@keyframes wave-animation {
-  0% {transform: rotate(0deg)}
-  10% {transform: rotate(14deg)}
-  20% {transform: rotate(-8deg)}
-  30% {transform: rotate(14deg)}
-  40% {transform: rotate(-4deg)}
-  50% {transform: rotate(10deg)}
-  60% {transform: rotate(0deg)}
-  100% {transform: rotate(0deg)}
-}
-
 @keyframes appear {
   0% {
     opacity: 0;
@@ -98,8 +65,7 @@ $color-black: rgb(26, 26, 26);
   margin: 0;
   box-sizing: border-box;
   color: $color-white;
-  font-family: 'Montserrat', sans-serif;
-  // border: 1px solid red;
+  font-family: "Montserrat", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -110,26 +76,9 @@ body {
   background-color: $color-black;
 }
 
-// .container {
-//   scroll-snap-type: y mandatory;
-//   overflow-y: auto;
-// }
-
 section {
-  @include h-w(100vh, 100vw);
   @include flexbox;
   position: relative;
-  // scroll-snap-align: start;
-}
-
-.background {
-  position: absolute;
-  z-index: -1;
-  bottom: 10%;
-  right: 15%;
-  font-size: 150px;
-  text-shadow: 5px 5px 5px rgb(10, 10, 10);
-  color: $color-black;
 }
 
 @media (max-width: 1400px) {
@@ -144,68 +93,81 @@ section {
   }
 }
 
-/******************/
-/* NAVBAR SECTION */
-/******************/
-.navbar {
-  @include h-w(auto, 100vw);
-  display: flex;
+///////
+// Logo
+///////
+.logo-container {
+  @include w-h(70px, 70px);
+  @include flexbox;
   position: fixed;
-  padding: 30px 40px;
-  top: 0;
   z-index: 10;
+  top: 1vw;
+  left: 1vw;
 
-  .logo-container {
-    @include flexbox;
-    left: 0;
+  .logo {
+    height: 40px;
+    color: $color-white;
+    z-index: 10;
+    cursor: pointer;
+  }
 
-    .logo {
-      height: 40px;
-      color: $color-white;
-      cursor: pointer;
-    }
-    
-    .logo-box-1, .logo-box-2 {
-      @include h-w;
-      position: absolute;
-      transform: rotate(45deg);
-      cursor: pointer;
-    }
+  .logo-box-1,
+  .logo-box-2 {
+    @include w-h;
+    align-self: center;
+    justify-self: center;
+    position: absolute;
+    cursor: pointer;
+  }
 
-    .logo-box-1 {
-      border-top: 3px solid $color-green;
-      border-right: 3px solid $color-green;
-      animation: spin1 7s linear infinite;
-    }
+  .logo-box-1 {
+    border-top: 3px solid $color-green;
+    border-right: 3px solid $color-green;
+    animation: spin1 7s linear infinite;
+  }
 
-    .logo-box-2 {
-      border-left: 3px solid $color-green;
-      border-bottom: 3px solid $color-green;
-      animation: spin2 7s linear infinite;
-    }
+  .logo-box-2 {
+    border-left: 3px solid $color-green;
+    border-bottom: 3px solid $color-green;
+    animation: spin2 7s linear infinite;
   }
 }
 
 /*****************/
 /* INTRO SECTION */
 /*****************/
-@media (max-width: 700px) {
+@media (max-width: 1300px) {
   .intro {
-    font-size: 30px;
+    h1 {
+      font-size: 60px;
+    }
+    h5 {
+      font-size: 20px;
+    }
   }
 }
 
-@media (min-width: 701px) {
+@media (min-width: 1301px) {
   .intro {
-    font-size: 60px;
+    h1 {
+      font-size: 150px;
+    }
+    h5 {
+      font-size: 30px;
+    }
   }
 }
 
 .intro {
+  @include w-h(100vw, 100vh);
   flex-direction: column;
 
+  h1,
+  h5 {
+    cursor: default;
+  }
+
   h1 {
-    font-size: 150px;
     letter-spacing: 0.5px;
     color: $color-green;
     // MAKE LETTERS FALL INTO PLACE
@@ -213,13 +175,14 @@ section {
   }
 
   h5 {
-    font-size: 0.5em;
+    letter-spacing: 2px;
   }
-  
-  .intro-buttons-container {
-    margin-top: 7vh;
 
-    .intro-resume, .intro-contact {
+  .intro-buttons-container {
+    margin-top: 5%;
+
+    .intro-resume,
+    .intro-contact {
       border: 2px solid gray;
       border-radius: 2px;
       padding: 5px 20px;
@@ -227,22 +190,24 @@ section {
       background-color: transparent;
       cursor: pointer;
       opacity: 0;
-      
+
       color: gray;
       font-weight: 500;
       font-size: 20px;
       transition-duration: 0.3s;
-    
+
       animation-name: appear;
-      animation-duration: 1s;
+      animation-duration: 0.7s;
       animation-delay: 0s; // CHANGE DELAY BASED ON OTHER ANIMATIONS
       animation-fill-mode: forwards;
     }
-    
-    .intro-resume:hover, .intro-contact:hover {
-      transition: border 0.5s ease, color 0.5s ease;
+
+    .intro-resume:hover,
+    .intro-contact:hover {
+      transition: 0.5s ease;
       border: 2px solid $color-green;
       color: $color-green;
+      background-color: black;
     }
   }
 }
@@ -250,62 +215,39 @@ section {
 /*****************/
 /* ABOUT SECTION */
 /*****************/
-@media (max-width: 950px) {
-  .body.reveal {
-    font-size: 20px;
-  }
-  .skills-container.reveal > img {
-    @include h-w(60px, 60px);
+@media (max-width: 1450px) {
+  .about-container {
+    margin: 0 5vw;
   }
 }
 
-@media (min-width: 951px) {
-  .body.reveal {
-    font-size: 30px;
-  }
-  .skills-container.reveal > img {
-    @include h-w(100px, 100px);
+@media (min-width: 1451px) {
+  .about-container {
+    margin: 0 20vw;
   }
 }
 
 .about-container {
   @include flexbox(column, flex-start, flex-start);
-  transform: translateY(-15%);
-  width: 1150px;
-  margin: 0 50px;
-  
-  .body.reveal {
+  @include w-h(100vw, 50vh);
+
+  .body {
     color: $color-white;
+    font-size: 30px;
+    text-align: center;
+    align-self: center;
 
-    transform: translateX(-500px);
-    opacity: 0;
-    transition: all 1s ease;
-
-    &.active {
-      transform: translateX(0px);
-      opacity: 1;
-      transition: all 1s ease;
-    }
+    opacity: 1;
   }
 
-  @media (max-width: 600px) {
-    .skills-container.reveal {
-      width: 240px;
-    }
-  }
-  
-  .skills-container.reveal {
+  .skills-container {
     margin-top: 50px;
-    align-self: flex-end;
+    align-self: center;
 
-    transform: translateX(500px);
-    opacity: 0;
-    transition: all 1s ease;
+    opacity: 1;
 
-    &.skills-container.reveal.active {
-      transform: translateX(0px);
-      opacity: 1;
-      transition: all 1s ease;
+    img {
+      @include w-h(10vh, 10vh);
     }
   }
 }
@@ -313,197 +255,157 @@ section {
 /****************/
 /* WORK SECTION */
 /****************/
-@media (max-width: 700px) {
-  .work {
-    display: grid;
-    padding: 20px;
-    grid-template-rows: 20% 20% 20%;
-    row-gap: 10px;
-  }
-}
-
-@media (min-width: 701px) {
-  .work {
-    display: grid;
-    padding: 100px;
-    grid-template-columns: 30% 30% 30%;
-    column-gap: 50px;
-  }
-}
 
 .work {
-  .project.reveal {
-    @include flexbox(column, center, center);
-    transform: translateX(1000px);
-    opacity: 0;
-    transition: all 0.5s ease;
-    cursor: pointer;
+  @include w-h(100vw, fit-content);
+  @include flexbox(column, center, center);
 
-    &.active {
-      transform: translateX(0px);
-      opacity: 1;
-      transition: all 0.7s ease;
+  .project {
+    @include w-h(60%, auto);
+    margin-top: 5vh;
+    opacity: 1;
+    position: relative;
+
+    .project-overlay {
+      @include w-h(100%, 100%);
+      @include flexbox;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      opacity: 0;
+      transition: 0.3s ease;
+
+      &:hover {
+        opacity: 1;
+        backdrop-filter: blur(5px);
+        transition: 0.3s ease;
+      }
+
+      .link {
+        @include w-h(fit-content, fit-content);
+        padding: 1%;
+        border: solid 2px $color-green;
+        border-radius: 10px;
+        background-color: $color-black;
+        color: $color-green;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+          background-color: black;
+        }
+      }
     }
-  }
 
-  .video-player {
-    @include h-w(auto, 100%);
-    transition: 1s ease;
+    .video-player {
+      @include w-h(100%, auto);
+      transition: 1s ease;
+    }
   }
 }
 
 /*******************/
 /* CONTACT SECTION */
 /*******************/
-@media (max-width: 800px) {
+.contact {
+  @include w-h(100vw, fit-content);
+  margin-top: 15vh;
+
   .contact-container {
-    height: 500px;
-    grid-template-columns: none;
-    grid-template-rows: 1fr 1fr;
-    justify-items: center;
-    transform: translateY(-15%);
-  }
-}
+    @include flexbox($fd: column);
+    @include w-h(30vw, fit-content);
 
-@media (min-width: 801px) {
-  .contact-container {
-    @include h-w(auto, 1200px);
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: none;
-    transform: translateY(-15%);
-  }
-}
+    .contact-form {
+      @include flexbox($fd: column, $jc: flex-start);
+      @include w-h(100%, 100%);
+      gap: 40px;
 
-.contact-container {
-  display: grid;
-  padding: 0 50px;
-
-  @media (max-width: 1000px) {
-    .contact-form.reveal {
-      width: 300px;
-    }
-  }
-
-  @media (min-width: 1001px) {
-    .contact-form.reveal {
-      width: 500px;
-    }
-  }
-
-  .contact-form.reveal {
-    @include flexbox($flex-direction: column, $align-items: flex-start, $justify-content: flex-start);
-    gap: 40px;
-
-    opacity: 0;
-    transform: translateY(100px);
-    transition: 0.7s ease;
-
-    &.active {
-      opacity: 1;
-      transform: translateY(0px);
-      transition: 1s ease;
-    }
-
-    .contact-title {
-      color: $color-green;
-      font-size: 30px;
-    }
-
-    .input.message {
-      @include h-w(60px, 100%);
-    }
-
-    .input {
-      @include h-w(25px, 100%);
-      position: relative;
-
-      & input, & textarea {
-        background-color: transparent;
-        cursor: text;
-        border: none;
-        border-bottom: solid 2px $color-green;
-        outline: none;
+      .contact-title {
         color: $color-green;
-        font-size: 16px;
-        font-weight: 500;
+        font-size: 30px;
       }
 
-      & input {
-        @include h-w(25px, 100%);
+      .input {
+        @include w-h(100%, 25px);
+        position: relative;
+
+        &.message {
+          @include w-h(100%, 60px);
+        }
+
+        & input,
+        & textarea {
+          background-color: transparent;
+          cursor: text;
+          border: none;
+          border-bottom: solid 2px $color-green;
+          outline: none;
+          color: $color-green;
+          font-size: 16px;
+          font-weight: 500;
+        }
+
+        & input {
+          @include w-h(100%, 25px);
+        }
+
+        & textarea {
+          @include w-h(100%, 60px);
+          resize: none;
+        }
+
+        & span {
+          position: absolute;
+          color: $color-green;
+          left: 0;
+          bottom: 5px;
+          font-size: 16px;
+          font-weight: 500;
+          pointer-events: none;
+          transition: 0.5s;
+        }
+
+        & input:focus ~ span,
+        & input:valid ~ span {
+          color: rgb(53, 53, 53);
+          transform: translateY(-20px);
+        }
+
+        & textarea:focus ~ span,
+        & textarea:valid ~ span {
+          color: rgb(53, 53, 53);
+          transform: translateY(-55px);
+        }
       }
 
-      & textarea {
-        @include h-w(60px, 100%);
-        resize: none;
-      }
-
-      & span {
-        position: absolute;
+      .submit button {
+        @include w-h(70px, 30px);
+        border: 1px solid $color-green;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 700;
+        background-color: $color-black;
         color: $color-green;
-        left: 0;
-        bottom: 5px;
-        font-size: 16px;
-        font-weight: 500;
-        pointer-events: none;
-        transition: 0.5s;
-      }
+        transition: 0.3s ease;
 
-      & input:focus ~ span,
-      & input:valid ~ span {
-        color: rgb(53, 53, 53);
-        transform: translateY(-20px);
-      }
-
-      & textarea:focus ~ span,
-      & textarea:valid ~ span {
-        color: rgb(53, 53, 53);
-        transform: translateY(-55px);
+        &:hover {
+          transition: 0.3s ease;
+          background-color: $color-green;
+          color: black;
+        }
       }
     }
-    
-    .submit button {
-      @include h-w(30px, 70px);
-      border: 1px solid $color-green;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 700;
-      background-color: $color-black;
-      color: $color-green;
-    }
-    
-    .submit button:hover {
-      transition: 0.5s ease;
-      background-color: $color-green;
-      color: black;
-    }
-  }
 
-  @media (max-width: 800px) {
-    .contact-links.reveal {
-      height: 150px;
-    }
-  }
-  
-  .contact-links.reveal {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    .contact-links {
+      @include flexbox;
+      margin: 15vh;
 
-    opacity: 0;
-    transform: translateY(100px);
-    transition: 0.5s ease;
-
-    &.active {
-      opacity: 1;
-      transform: translateY(0px);
-      transition: 0.7s ease;
-    }
-
-    & img {
-      height: 100px;
-      width: 100px;
-      margin: 0 20px;
-      cursor: pointer;
+      img {
+        @include w-h(10vh, 10vh);
+        margin: 0 2vw;
+        cursor: pointer;
+      }
     }
   }
 }
