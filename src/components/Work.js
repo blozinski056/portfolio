@@ -61,50 +61,6 @@ export default function Work() {
 
   return (
     <section className="work">
-      <div className="project 1">
-        <div className="project-overlay 1">
-          <button className="link">WeebSite</button>
-        </div>
-        <div className="project-tile">
-          <video
-            className="video-player"
-            id="vid1"
-            autoPlay
-            playsInline
-            muted
-            loop
-          >
-            <source
-              className="video-player-source"
-              src="./videos/anime-ecommerce.mp4"
-              type="video/mp4"
-            />
-          </video>
-        </div>
-      </div>
-
-      <div className="project 2">
-        <div className="project-overlay 2">
-          <button className="link">MovieTracker</button>
-        </div>
-        <div className="project-tile">
-          <video
-            className="video-player"
-            id="vid2"
-            autoPlay
-            playsInline
-            muted
-            loop
-          >
-            <source
-              className="video-player-source"
-              src="./videos/movie-list.mp4"
-              type="video/mp4"
-            />
-          </video>
-        </div>
-      </div>
-
       <div className="project 3">
         <div className="project-overlay 3">
           <button
@@ -126,6 +82,62 @@ export default function Work() {
             <source
               className="video-player-source"
               src="./videos/reminder-app.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
+
+      <div className="project 1">
+        <div className="project-overlay 1">
+          <button
+            className="link"
+            onClick={() =>
+              open("https://github.com/blozinski056/anime-ecommerce")
+            }
+          >
+            WeebSite
+          </button>
+        </div>
+        <div className="project-tile">
+          <video
+            className="video-player"
+            id="vid1"
+            autoPlay
+            playsInline
+            muted
+            loop
+          >
+            <source
+              className="video-player-source"
+              src="./videos/anime-ecommerce.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
+
+      <div className="project 2">
+        <div className="project-overlay 2">
+          <button
+            className="link"
+            onClick={() => open("https://github.com/blozinski056/movie-list")}
+          >
+            MovieTracker
+          </button>
+        </div>
+        <div className="project-tile">
+          <video
+            className="video-player"
+            id="vid2"
+            autoPlay
+            playsInline
+            muted
+            loop
+          >
+            <source
+              className="video-player-source"
+              src="./videos/movie-list.mp4"
               type="video/mp4"
             />
           </video>

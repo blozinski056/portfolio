@@ -378,6 +378,7 @@ section {
 .work .project {
   width: 60%;
   height: auto;
+  overflow: hidden;
   margin-top: 10vh;
   opacity: 1;
   position: relative;
@@ -422,8 +423,7 @@ section {
 }
 .work .project .video-player {
   width: 100%;
-  height: auto;
-  transition: 1s ease;
+  height: 100%;
 }
 
 /*******************/

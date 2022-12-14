@@ -165,9 +165,6 @@ section {
 /*****************/
 @media (max-width: 1300px) {
   .intro {
-    // h1 {
-    //   font-size: 60px;
-    // }
     li {
       font-size: 60px;
     }
@@ -179,9 +176,6 @@ section {
 
 @media (min-width: 1301px) {
   .intro {
-    // h1 {
-    //   font-size: 150px;
-    // }
     li {
       font-size: 150px;
     }
@@ -200,11 +194,6 @@ section {
   h5 {
     cursor: default;
   }
-
-  // h1 {
-  //   letter-spacing: 0.5px;
-  //   color: $color-green;
-  // }
 
   ul {
     list-style: none;
@@ -257,10 +246,6 @@ section {
       font-size: 20px;
       transition-duration: 0.3s;
 
-      // animation-name: appear;
-      // animation-duration: 0.7s;
-      // animation-delay: 1.6s; // CHANGE DELAY BASED ON OTHER ANIMATIONS
-      // animation-fill-mode: forwards;
       animation: 0.7s ease-in-out 2.1s appear forwards;
     }
 
@@ -320,6 +305,7 @@ section {
 
   .project {
     @include w-h(60%, auto);
+    overflow: hidden;
     margin-top: 10vh;
     opacity: 1;
     position: relative;
@@ -357,8 +343,7 @@ section {
     }
 
     .video-player {
-      @include w-h(100%, auto);
-      transition: 1s ease;
+      @include w-h(100%, 100%);
     }
   }
 }
