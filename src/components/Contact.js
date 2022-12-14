@@ -36,36 +36,63 @@ export default function Contact() {
     window.open("./Bryce Lozinski 2022 Resume.pdf", "_blank");
   }
 
+  window.addEventListener("scroll", revealContact);
+
+  function revealContact() {
+    const bottom = document
+      .querySelector(".contact-links")
+      .getBoundingClientRect().bottom;
+
+    if (bottom <= window.innerHeight) {
+      // console.log("hit");
+      const elms = document.querySelectorAll(".hidden");
+
+      elms.forEach((elm) => {
+        elm.classList.add("reveal");
+      });
+    }
+  }
+
   return (
     <section className="contact">
-      {/* <h1 className="background">CONTACT</h1> */}
       <div className="contact-container">
-        <form
-          className="contact-form reveal"
-          onSubmit={sendEmail}
-          autoComplete="off"
-        >
-          <h1 className="contact-title">Send a Message</h1>
-          <div className="input name">
+        <form className="contact-form" onSubmit={sendEmail} autoComplete="off">
+          <h1 className="contact-title hidden">Send a Message</h1>
+          <div className="input name hidden">
             <input type="text" required="required" name="name" />
             <span>Name</span>
           </div>
-          <div className="input email">
+          <div className="input email hidden">
             <input type="text" required="required" name="email" />
             <span>Email</span>
           </div>
-          <div className="input message">
+          <div className="input message hidden">
             <textarea required="required" name="message"></textarea>
             <span>Message</span>
           </div>
-          <div className="submit">
+          <div className="submit hidden">
             <button type="submit">Submit</button>
           </div>
         </form>
-        <div className="contact-links reveal">
-          <img src="./images/github.png" alt="" onClick={openGithub} />
-          <img src="./images/linkedin.png" alt="" onClick={openLinkedin} />
-          <img src="./images/resume.png" alt="" onClick={openResume} />
+        <div className="contact-links">
+          <img
+            className="link-github hidden"
+            src="./images/github.png"
+            alt=""
+            onClick={openGithub}
+          />
+          <img
+            className="link-linkedin hidden"
+            src="./images/linkedin.png"
+            alt=""
+            onClick={openLinkedin}
+          />
+          <img
+            className="link-resume hidden"
+            src="./images/resume.png"
+            alt=""
+            onClick={openResume}
+          />
         </div>
       </div>
     </section>

@@ -50,11 +50,37 @@ $color-black: rgb(26, 26, 26);
 @keyframes appear {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(5vh);
   }
   100% {
     opacity: 1;
     transform: translateY(0px);
+  }
+}
+
+@keyframes revealLinks {
+  0% {
+    opacity: 0;
+    transform: translateY(10vh);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-3vh);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes dropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20vh);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -66,6 +92,7 @@ $color-black: rgb(26, 26, 26);
   box-sizing: border-box;
   color: $color-white;
   font-family: "Montserrat", sans-serif;
+  cursor: default;
 }
 
 ::-webkit-scrollbar {
@@ -138,7 +165,10 @@ section {
 /*****************/
 @media (max-width: 1300px) {
   .intro {
-    h1 {
+    // h1 {
+    //   font-size: 60px;
+    // }
+    li {
       font-size: 60px;
     }
     h5 {
@@ -149,7 +179,10 @@ section {
 
 @media (min-width: 1301px) {
   .intro {
-    h1 {
+    // h1 {
+    //   font-size: 150px;
+    // }
+    li {
       font-size: 150px;
     }
     h5 {
@@ -159,23 +192,51 @@ section {
 }
 
 .intro {
-  @include w-h(100vw, 100vh);
+  @include w-h(100vw, 80vh);
   flex-direction: column;
+  padding-top: 10vh;
 
-  h1,
+  li,
   h5 {
     cursor: default;
   }
 
-  h1 {
-    letter-spacing: 0.5px;
-    color: $color-green;
-    // MAKE LETTERS FALL INTO PLACE
-    // animation: fall 3s steps(14, end);
+  // h1 {
+  //   letter-spacing: 0.5px;
+  //   color: $color-green;
+  // }
+
+  ul {
+    list-style: none;
+
+    li {
+      display: inline-block;
+      background: linear-gradient(180deg, $color-green 40%, $color-white 100%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+      letter-spacing: 1px;
+      opacity: 0;
+      animation: 0.2s ease-in-out dropIn forwards;
+
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          animation-delay: $i * 0.1s + 0.3s;
+        }
+      }
+
+      @for $i from 7 through 14 {
+        &:nth-child(#{$i}) {
+          animation-delay: $i * 0.1s + 0.2s;
+        }
+      }
+    }
   }
 
   h5 {
     letter-spacing: 2px;
+    opacity: 0;
+    animation: 0.7s ease-in-out 1.8s appear forwards;
   }
 
   .intro-buttons-container {
@@ -196,10 +257,11 @@ section {
       font-size: 20px;
       transition-duration: 0.3s;
 
-      animation-name: appear;
-      animation-duration: 0.7s;
-      animation-delay: 0s; // CHANGE DELAY BASED ON OTHER ANIMATIONS
-      animation-fill-mode: forwards;
+      // animation-name: appear;
+      // animation-duration: 0.7s;
+      // animation-delay: 1.6s; // CHANGE DELAY BASED ON OTHER ANIMATIONS
+      // animation-fill-mode: forwards;
+      animation: 0.7s ease-in-out 2.1s appear forwards;
     }
 
     .intro-resume:hover,
@@ -228,26 +290,23 @@ section {
 }
 
 .about-container {
-  @include flexbox(column, flex-start, flex-start);
+  @include flexbox($fd: column);
   @include w-h(100vw, 50vh);
 
-  .body {
+  .about-text {
     color: $color-white;
     font-size: 30px;
     text-align: center;
-    align-self: center;
-
-    opacity: 1;
+    opacity: 0;
   }
 
   .skills-container {
     margin-top: 50px;
-    align-self: center;
-
-    opacity: 1;
+    opacity: 0;
 
     img {
       @include w-h(10vh, 10vh);
+      margin: 5px;
     }
   }
 }
@@ -255,14 +314,13 @@ section {
 /****************/
 /* WORK SECTION */
 /****************/
-
 .work {
   @include w-h(100vw, fit-content);
   @include flexbox(column, center, center);
 
   .project {
     @include w-h(60%, auto);
-    margin-top: 5vh;
+    margin-top: 10vh;
     opacity: 1;
     position: relative;
 
@@ -321,9 +379,25 @@ section {
       @include w-h(100%, 100%);
       gap: 40px;
 
+      .hidden {
+        opacity: 0;
+        transform: translateX(-50vw);
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in;
+      }
+
       .contact-title {
         color: $color-green;
         font-size: 30px;
+
+        &.reveal {
+          transition-delay: 0s;
+        }
       }
 
       .input {
@@ -377,22 +451,40 @@ section {
           color: rgb(53, 53, 53);
           transform: translateY(-55px);
         }
+
+        &.name.reveal {
+          transition-delay: 0.2s;
+        }
+
+        &.email.reveal {
+          transition-delay: 0.4s;
+        }
+
+        &.message.reveal {
+          transition-delay: 0.6s;
+        }
       }
 
-      .submit button {
-        @include w-h(70px, 30px);
-        border: 1px solid $color-green;
-        border-radius: 4px;
-        cursor: pointer;
-        font-weight: 700;
-        background-color: $color-black;
-        color: $color-green;
-        transition: 0.3s ease;
-
-        &:hover {
+      .submit {
+        button {
+          @include w-h(70px, 30px);
+          border: 1px solid $color-green;
+          border-radius: 4px;
+          cursor: pointer;
+          font-weight: 700;
+          background-color: $color-black;
+          color: $color-green;
           transition: 0.3s ease;
-          background-color: $color-green;
-          color: black;
+
+          &:hover {
+            transition: 0.3s ease;
+            background-color: $color-green;
+            color: black;
+          }
+        }
+
+        &.reveal {
+          transition-delay: 0.8s;
         }
       }
     }
@@ -405,6 +497,23 @@ section {
         @include w-h(10vh, 10vh);
         margin: 0 2vw;
         cursor: pointer;
+
+        &.hidden {
+          opacity: 0;
+          transform: translateY(10vh);
+        }
+      }
+
+      .link-github.reveal {
+        animation: 0.3s ease-in 1s forwards revealLinks;
+      }
+
+      .link-linkedin.reveal {
+        animation: 0.3s ease-in 1.2s forwards revealLinks;
+      }
+
+      .link-resume.reveal {
+        animation: 0.3s ease-in 1.4s forwards revealLinks;
       }
     }
   }

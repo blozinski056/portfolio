@@ -12,7 +12,23 @@ export default function Intro() {
 
   return (
     <section className="intro">
-      <h1>Bryce Lozinski</h1>
+      {/* <h1>Bryce Lozinski</h1> */}
+      <ul>
+        <li>B</li>
+        <li>r</li>
+        <li>y</li>
+        <li>c</li>
+        <li>e</li>
+        <li>&nbsp;</li>
+        <li>L</li>
+        <li>o</li>
+        <li>z</li>
+        <li>i</li>
+        <li>n</li>
+        <li>s</li>
+        <li>k</li>
+        <li>i</li>
+      </ul>
       <h5>FULL STACK WEB DEVELOPER</h5>
 
       <div className="intro-buttons-container">

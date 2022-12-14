@@ -5,10 +5,62 @@ export default function Work() {
     window.open(url, "_blank");
   }
 
+  window.addEventListener("scroll", revealWork);
+
+  function revealWork() {
+    const projects = document.querySelectorAll(".project");
+    const travelDist1 = 0.4 * window.innerHeight;
+    const travelDist2 = 0.3 * window.innerHeight;
+
+    for (let i = 0; i < projects.length; i++) {
+      const top = projects[i].getBoundingClientRect().top;
+      const bottom = projects[i].getBoundingClientRect().bottom;
+      const percentTop = (0.9 * window.innerHeight - top) / travelDist1;
+      const percentBottom = (0.4 * window.innerHeight - bottom) / travelDist2;
+
+      // top below 0.9
+      if (top > 0.9 * window.innerHeight) {
+        projects[i].style.transform = "rotateX(-45deg) translateY(-5vh)";
+        projects[i].style.opacity = "0";
+      }
+      // top above 0.9 and top below 0.5
+      else if (
+        top <= 0.9 * window.innerHeight &&
+        top >= 0.5 * window.innerHeight
+      ) {
+        projects[
+          i
+        ].style.transform = `rotateX(calc(-45deg + 45deg * ${percentTop})) translateY(calc(-5vh + 5vh * ${percentTop}))`;
+        projects[i].style.opacity = `${percentTop}`;
+      }
+      // top above 0.5 and bottom below 0.4
+      else if (
+        top < 0.5 * window.innerHeight &&
+        bottom > 0.4 * window.innerHeight
+      ) {
+        projects[i].style.transform = "none";
+        projects[i].style.opacity = "1";
+      }
+      // bottom above 0.4 and bottom below 0.1
+      else if (
+        bottom <= 0.4 * window.innerHeight &&
+        bottom >= 0.1 * window.innerHeight
+      ) {
+        projects[
+          i
+        ].style.transform = `rotateX(calc(45deg * ${percentBottom})) translateY(calc(5vh * ${percentBottom}))`;
+        projects[i].style.opacity = `calc(1 - ${percentBottom})`;
+      }
+      // bottom above 0.1
+      else if (bottom < 0.1 * window.innerHeight) {
+        projects[i].style.transform = "rotateX(45deg) translateY(5vh)";
+        projects[i].style.opacity = "0";
+      }
+    }
+  }
+
   return (
     <section className="work">
-      {/* <h1 className="background">Projects</h1> */}
-
       <div className="project 1">
         <div className="project-overlay 1">
           <button className="link">WeebSite</button>
