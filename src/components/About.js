@@ -13,17 +13,18 @@ export default function About() {
     // CALCULATIONS
 
     // total distance traveled for each animation
-    const travelDist = windowHeight * 0.1;
+    const travelDist1 = windowHeight * 0.3;
+    const travelDist2 = windowHeight * 0.1;
 
     // distance from 0.6 of window height
-    const distFromYStart = windowHeight * 0.6 - aboutTextTop;
+    const distFromYStart = windowHeight * 0.8 - aboutTextTop;
     // percentage of distance traveled from 0.6 to 0.5 of window height
-    const distPercentage = distFromYStart / travelDist;
+    const distPercentage = distFromYStart / travelDist1;
 
     // distance from 0.1 of window height
     const distFromYStart2 = windowHeight * 0.1 - aboutTextBottom;
     // percentage of distance traveled from 0.1 to 0 of window height
-    const distPercentage2 = distFromYStart2 / travelDist;
+    const distPercentage2 = distFromYStart2 / travelDist2;
 
     // 0.6 to 0.5 is animated
     // 0.5 to 0.1 is still
@@ -32,13 +33,13 @@ export default function About() {
     // ANIMATIONS
 
     // below 0.6 window height or above 0 window height
-    if (aboutTextTop > 0.6 * windowHeight || aboutTextBottom <= 0) {
+    if (aboutTextTop > 0.8 * windowHeight || aboutTextBottom <= 0) {
       aboutText.style.opacity = "0";
       skillsContainer.style.opacity = "0";
     }
     // above 0.6 window height and below 0.5 window height
     else if (
-      aboutTextTop <= 0.6 * windowHeight &&
+      aboutTextTop <= 0.8 * windowHeight &&
       aboutTextTop >= 0.5 * windowHeight
     ) {
       aboutText.style.opacity = `${distPercentage}`;
