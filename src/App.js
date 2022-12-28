@@ -20,6 +20,20 @@ export default function App() {
     window.scrollTo(0, 0);
   };
 
+  window.addEventListener("scroll", removeMouseArrow);
+
+  function removeMouseArrow() {
+    const mouseDiv = document.querySelector(".scroll-down");
+    const elmPosition = mouseDiv.getBoundingClientRect().bottom;
+
+    console.log(elmPosition, 0.75 * window.innerHeight);
+
+    if (elmPosition < 0.75 * window.innerHeight) {
+      mouseDiv.classList.add("disappear");
+      window.removeEventListener("scroll", removeMouseArrow);
+    }
+  }
+
   return (
     <div className="container">
       <Logo />
@@ -27,6 +41,10 @@ export default function App() {
       <About />
       <Work />
       <Contact />
+      <div className="scroll-down">
+        <img src="/images/mouse-green.png" alt="" className="mouse" />
+        <img src="/images/down-arrows-green.png" alt="" className="arrows" />
+      </div>
     </div>
   );
 }

@@ -40,11 +40,10 @@ export default function Contact() {
 
   function revealContact() {
     const bottom = document
-      .querySelector(".contact-links")
+      .querySelector(".contact-container")
       .getBoundingClientRect().bottom;
 
     if (bottom <= window.innerHeight) {
-      // console.log("hit");
       const elms = document.querySelectorAll(".hidden");
 
       elms.forEach((elm) => {

@@ -54,7 +54,52 @@ $color-black: rgb(26, 26, 26);
   }
   100% {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(0);
+  }
+}
+
+@keyframes mouse-appear {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 5vh);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes mouse-disappear {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -10vh);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  10% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  40% {
+    opacity: 1;
+    transform: translate(-50%, 50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
   }
 }
 
@@ -89,6 +134,7 @@ $color-black: rgb(26, 26, 26);
 ///////////
 * {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
   color: $color-white;
   font-family: "Montserrat", sans-serif;
@@ -106,6 +152,28 @@ body {
 section {
   @include flexbox;
   position: relative;
+}
+
+.scroll-down {
+  @include flexbox($fd: column);
+  position: absolute;
+  left: 50%;
+  bottom: 5vh;
+  opacity: 0;
+  animation: 1s ease-in-out 3s mouse-appear, infinite 3s ease 4s bounce;
+
+  &.disappear {
+    animation: 0.5s ease mouse-disappear;
+  }
+
+  .mouse {
+    @include w-h(35px, 35px);
+  }
+
+  .arrows {
+    @include w-h(15px, 15px);
+    transform: translateY(-2px);
+  }
 }
 
 @media (max-width: 1400px) {
@@ -189,6 +257,7 @@ section {
   @include w-h(100vw, 80vh);
   flex-direction: column;
   padding-top: 10vh;
+  position: relative;
 
   li,
   h5 {
@@ -229,10 +298,11 @@ section {
   }
 
   .intro-buttons-container {
-    margin-top: 5%;
+    margin-top: 3%;
 
     .intro-resume,
     .intro-contact {
+      @include w-h(143px, 38px);
       border: 2px solid gray;
       border-radius: 2px;
       padding: 5px 20px;
@@ -358,6 +428,7 @@ section {
   .contact-container {
     @include flexbox($fd: column);
     @include w-h(30vw, fit-content);
+    margin-bottom: 5px;
 
     .contact-form {
       @include flexbox($fd: column, $jc: flex-start);

@@ -9,51 +9,51 @@ export default function Work() {
 
   function revealWork() {
     const projects = document.querySelectorAll(".project");
-    const travelDist1 = 0.4 * window.innerHeight;
-    const travelDist2 = 0.3 * window.innerHeight;
+    const travelDist1 = 0.3 * window.innerHeight;
+    const travelDist2 = 0.2 * window.innerHeight;
 
     for (let i = 0; i < projects.length; i++) {
       const top = projects[i].getBoundingClientRect().top;
       const bottom = projects[i].getBoundingClientRect().bottom;
-      const percentTop = (0.9 * window.innerHeight - top) / travelDist1;
-      const percentBottom = (0.4 * window.innerHeight - bottom) / travelDist2;
+      const percentTop = (0.7 * window.innerHeight - top) / travelDist1;
+      const percentBottom = (0.2 * window.innerHeight - bottom) / travelDist2;
 
-      // top below 0.9
-      if (top > 0.9 * window.innerHeight) {
-        projects[i].style.transform = "rotateX(-45deg) translateY(-5vh)";
+      // top below 0.7
+      if (top > 0.7 * window.innerHeight) {
+        projects[i].style.transform = "translateY(10vh)";
         projects[i].style.opacity = "0";
       }
-      // top above 0.9 and top below 0.5
+      // top above 0.7 and top below 0.4
       else if (
-        top <= 0.9 * window.innerHeight &&
-        top >= 0.5 * window.innerHeight
+        top <= 0.7 * window.innerHeight &&
+        top >= 0.4 * window.innerHeight
       ) {
         projects[
           i
-        ].style.transform = `rotateX(calc(-45deg + 45deg * ${percentTop})) translateY(calc(-5vh + 5vh * ${percentTop}))`;
+        ].style.transform = `translateY(calc(10vh - 10vh * ${percentTop}))`;
         projects[i].style.opacity = `${percentTop}`;
       }
-      // top above 0.5 and bottom below 0.4
+      // top above 0.4 and bottom below 0.2
       else if (
-        top < 0.5 * window.innerHeight &&
-        bottom > 0.4 * window.innerHeight
+        top < 0.4 * window.innerHeight &&
+        bottom > 0.2 * window.innerHeight
       ) {
         projects[i].style.transform = "none";
         projects[i].style.opacity = "1";
       }
-      // bottom above 0.4 and bottom below 0.1
+      // bottom above 0.2 and bottom below 0
       else if (
-        bottom <= 0.4 * window.innerHeight &&
-        bottom >= 0.1 * window.innerHeight
+        bottom <= 0.2 * window.innerHeight &&
+        bottom >= 0 * window.innerHeight
       ) {
         projects[
           i
-        ].style.transform = `rotateX(calc(45deg * ${percentBottom})) translateY(calc(5vh * ${percentBottom}))`;
+        ].style.transform = `translateY(calc(-10vh * ${percentBottom}))`;
         projects[i].style.opacity = `calc(1 - ${percentBottom})`;
       }
-      // bottom above 0.1
-      else if (bottom < 0.1 * window.innerHeight) {
-        projects[i].style.transform = "rotateX(45deg) translateY(5vh)";
+      // bottom above 0
+      else if (bottom < 0 * window.innerHeight) {
+        projects[i].style.transform = "translateY(-10vh)";
         projects[i].style.opacity = "0";
       }
     }
@@ -65,7 +65,7 @@ export default function Work() {
         <div className="project-overlay 3">
           <button
             className="link"
-            onClick={() => open("https://remindme-bloz.com")}
+            onClick={() => open("https://www.remindmenotes.com/")}
           >
             RemindMe
           </button>
@@ -81,36 +81,7 @@ export default function Work() {
           >
             <source
               className="video-player-source"
-              src="./videos/reminder-app.mp4"
-              type="video/mp4"
-            />
-          </video>
-        </div>
-      </div>
-
-      <div className="project 1">
-        <div className="project-overlay 1">
-          <button
-            className="link"
-            onClick={() =>
-              open("https://github.com/blozinski056/anime-ecommerce")
-            }
-          >
-            WeebSite
-          </button>
-        </div>
-        <div className="project-tile">
-          <video
-            className="video-player"
-            id="vid1"
-            autoPlay
-            playsInline
-            muted
-            loop
-          >
-            <source
-              className="video-player-source"
-              src="./videos/anime-ecommerce.mp4"
+              src="/videos/remindme.mp4"
               type="video/mp4"
             />
           </video>
@@ -121,7 +92,7 @@ export default function Work() {
         <div className="project-overlay 2">
           <button
             className="link"
-            onClick={() => open("https://github.com/blozinski056/movie-list")}
+            onClick={() => open("https://www.movietrackerlist.com/")}
           >
             MovieTracker
           </button>
@@ -137,7 +108,34 @@ export default function Work() {
           >
             <source
               className="video-player-source"
-              src="./videos/movie-list.mp4"
+              src="/videos/movietracker.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
+
+      <div className="project 1">
+        <div className="project-overlay 1">
+          <button
+            className="link"
+            onClick={() => open("https://www.einsiteecomm.com")}
+          >
+            WeebSite
+          </button>
+        </div>
+        <div className="project-tile">
+          <video
+            className="video-player"
+            id="vid1"
+            autoPlay
+            playsInline
+            muted
+            loop
+          >
+            <source
+              className="video-player-source"
+              src="/videos/einsite.mp4"
               type="video/mp4"
             />
           </video>
