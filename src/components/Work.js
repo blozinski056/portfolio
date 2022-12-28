@@ -121,7 +121,7 @@ export default function Work() {
             className="link"
             onClick={() => open("https://www.einsiteecomm.com")}
           >
-            WeebSite
+            EinSite
           </button>
         </div>
         <div className="project-tile">
