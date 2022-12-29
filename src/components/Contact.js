@@ -33,7 +33,7 @@ export default function Contact() {
   }
 
   function openResume() {
-    window.open("./Bryce Lozinski 2022 Resume.pdf", "_blank");
+    window.open("/Bryce Lozinski 2022 Resume.pdf", "_blank");
   }
 
   window.addEventListener("scroll", revealContact);
@@ -76,19 +76,19 @@ export default function Contact() {
         <div className="contact-links">
           <img
             className="link-github hidden"
-            src="./images/github.png"
+            src="/images/github.png"
             alt=""
             onClick={openGithub}
           />
           <img
             className="link-linkedin hidden"
-            src="./images/linkedin.png"
+            src="/images/linkedin.png"
             alt=""
             onClick={openLinkedin}
           />
           <img
             className="link-resume hidden"
-            src="./images/resume.png"
+            src="/images/resume.png"
             alt=""
             onClick={openResume}
           />
