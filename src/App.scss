@@ -176,28 +176,28 @@ section {
   }
 }
 
-@media (max-width: 1400px) {
-  .background {
-    font-size: 100px;
-  }
-}
-
-@media (max-width: 600px) {
-  .background {
-    font-size: 75px;
-  }
-}
-
 ///////
 // Logo
 ///////
+@media (max-width: 600px) {
+  .logo-container {
+    top: 10px;
+    left: 20px;
+  }
+}
+
+@media (min-width: 601px) {
+  .logo-container {
+    top: 1vw;
+    left: 1vw;
+  }
+}
+
 .logo-container {
   @include w-h(70px, 70px);
   @include flexbox;
   position: fixed;
   z-index: 10;
-  top: 1vw;
-  left: 1vw;
 
   .logo {
     height: 40px;
@@ -231,13 +231,38 @@ section {
 /*****************/
 /* INTRO SECTION */
 /*****************/
-@media (max-width: 1300px) {
+@media (max-width: 600px) {
+  .intro {
+    li {
+      font-size: 40px;
+    }
+    h5 {
+      font-size: 15px;
+    }
+    .intro-resume,
+    .intro-contact {
+      @include w-h(100px, 30px);
+      font-size: 15px;
+      padding: 2px 5px;
+      margin: 0 10px;
+    }
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1300px) {
   .intro {
     li {
       font-size: 60px;
     }
     h5 {
       font-size: 20px;
+    }
+    .intro-resume,
+    .intro-contact {
+      @include w-h(143px, 38px);
+      font-size: 20px;
+      padding: 5px 20px;
+      margin: 0 20px;
     }
   }
 }
@@ -249,6 +274,13 @@ section {
     }
     h5 {
       font-size: 30px;
+    }
+    .intro-resume,
+    .intro-contact {
+      @include w-h(143px, 38px);
+      font-size: 20px;
+      padding: 5px 20px;
+      margin: 0 20px;
     }
   }
 }
@@ -302,18 +334,14 @@ section {
 
     .intro-resume,
     .intro-contact {
-      @include w-h(143px, 38px);
       border: 2px solid gray;
       border-radius: 2px;
-      padding: 5px 20px;
-      margin: 0 20px;
       background-color: transparent;
       cursor: pointer;
       opacity: 0;
 
       color: gray;
       font-weight: 500;
-      font-size: 20px;
       transition-duration: 0.3s;
 
       animation: 0.7s ease-in-out 2.1s appear forwards;
@@ -332,15 +360,51 @@ section {
 /*****************/
 /* ABOUT SECTION */
 /*****************/
-@media (max-width: 1450px) {
+@media (max-width: 1500px) {
   .about-container {
     margin: 0 5vw;
   }
 }
 
-@media (min-width: 1451px) {
+@media (min-width: 1501px) {
   .about-container {
     margin: 0 20vw;
+  }
+}
+
+@media (max-width: 1300px) {
+  .about-text {
+    font-size: 20px;
+  }
+
+  .skills-container {
+    margin-top: 25px;
+
+    img {
+      @include w-h(45px, 45px);
+    }
+  }
+}
+
+@media (min-width: 1301px) {
+  .about-text {
+    font-size: 30px;
+  }
+
+  .skills-container {
+    margin-top: 50px;
+
+    img {
+      @include w-h(90px, 90px);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-container {
+    @include flexbox;
+    width: 275px;
+    flex-wrap: wrap;
   }
 }
 
@@ -350,17 +414,14 @@ section {
 
   .about-text {
     color: $color-white;
-    font-size: 30px;
     text-align: center;
     opacity: 0;
   }
 
   .skills-container {
-    margin-top: 50px;
     opacity: 0;
 
     img {
-      @include w-h(10vh, 10vh);
       margin: 5px;
     }
   }
@@ -369,12 +430,29 @@ section {
 /****************/
 /* WORK SECTION */
 /****************/
+@media (max-width: 900px) {
+  .project {
+    width: 80%;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1300px) {
+  .project {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1301px) {
+  .project {
+    width: 60%;
+  }
+}
+
 .work {
   @include w-h(100vw, fit-content);
   @include flexbox(column, center, center);
 
   .project {
-    @include w-h(60%, auto);
     overflow: hidden;
     margin-top: 10vh;
     opacity: 1;
@@ -421,13 +499,24 @@ section {
 /*******************/
 /* CONTACT SECTION */
 /*******************/
+@media (max-width: 700px) {
+  .contact-container {
+    width: 400px;
+  }
+}
+
+@media (min-width: 701px) {
+  .contact-container {
+    width: 500px;
+  }
+}
+
 .contact {
   @include w-h(100vw, fit-content);
   margin-top: 15vh;
 
   .contact-container {
     @include flexbox($fd: column);
-    @include w-h(30vw, fit-content);
     margin-bottom: 5px;
 
     .contact-form {

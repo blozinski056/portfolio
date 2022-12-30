@@ -257,14 +257,16 @@ section {
   transform: translateY(-2px);
 }
 
-@media (max-width: 1400px) {
-  .background {
-    font-size: 100px;
+@media (max-width: 600px) {
+  .logo-container {
+    top: 10px;
+    left: 20px;
   }
 }
-@media (max-width: 600px) {
-  .background {
-    font-size: 75px;
+@media (min-width: 601px) {
+  .logo-container {
+    top: 1vw;
+    left: 1vw;
   }
 }
 .logo-container {
@@ -276,8 +278,6 @@ section {
   justify-content: center;
   position: fixed;
   z-index: 10;
-  top: 1vw;
-  left: 1vw;
 }
 .logo-container .logo {
   height: 40px;
@@ -310,12 +310,36 @@ section {
 /*****************/
 /* INTRO SECTION */
 /*****************/
-@media (max-width: 1300px) {
+@media (max-width: 600px) {
+  .intro li {
+    font-size: 40px;
+  }
+  .intro h5 {
+    font-size: 15px;
+  }
+  .intro .intro-resume,
+.intro .intro-contact {
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    padding: 2px 5px;
+    margin: 0 10px;
+  }
+}
+@media (min-width: 601px) and (max-width: 1300px) {
   .intro li {
     font-size: 60px;
   }
   .intro h5 {
     font-size: 20px;
+  }
+  .intro .intro-resume,
+.intro .intro-contact {
+    width: 143px;
+    height: 38px;
+    font-size: 20px;
+    padding: 5px 20px;
+    margin: 0 20px;
   }
 }
 @media (min-width: 1301px) {
@@ -324,6 +348,14 @@ section {
   }
   .intro h5 {
     font-size: 30px;
+  }
+  .intro .intro-resume,
+.intro .intro-contact {
+    width: 143px;
+    height: 38px;
+    font-size: 20px;
+    padding: 5px 20px;
+    margin: 0 20px;
   }
 }
 .intro {
@@ -415,18 +447,13 @@ section {
 }
 .intro .intro-buttons-container .intro-resume,
 .intro .intro-buttons-container .intro-contact {
-  width: 143px;
-  height: 38px;
   border: 2px solid gray;
   border-radius: 2px;
-  padding: 5px 20px;
-  margin: 0 20px;
   background-color: transparent;
   cursor: pointer;
   opacity: 0;
   color: gray;
   font-weight: 500;
-  font-size: 20px;
   transition-duration: 0.3s;
   -webkit-animation: 0.7s ease-in-out 2.1s appear forwards;
           animation: 0.7s ease-in-out 2.1s appear forwards;
@@ -442,14 +469,48 @@ section {
 /*****************/
 /* ABOUT SECTION */
 /*****************/
-@media (max-width: 1450px) {
+@media (max-width: 1500px) {
   .about-container {
     margin: 0 5vw;
   }
 }
-@media (min-width: 1451px) {
+@media (min-width: 1501px) {
   .about-container {
     margin: 0 20vw;
+  }
+}
+@media (max-width: 1300px) {
+  .about-text {
+    font-size: 20px;
+  }
+  .skills-container {
+    margin-top: 25px;
+  }
+  .skills-container img {
+    width: 45px;
+    height: 45px;
+  }
+}
+@media (min-width: 1301px) {
+  .about-text {
+    font-size: 30px;
+  }
+  .skills-container {
+    margin-top: 50px;
+  }
+  .skills-container img {
+    width: 90px;
+    height: 90px;
+  }
+}
+@media (max-width: 600px) {
+  .skills-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 275px;
+    flex-wrap: wrap;
   }
 }
 .about-container {
@@ -462,23 +523,34 @@ section {
 }
 .about-container .about-text {
   color: rgb(230, 255, 255);
-  font-size: 30px;
   text-align: center;
   opacity: 0;
 }
 .about-container .skills-container {
-  margin-top: 50px;
   opacity: 0;
 }
 .about-container .skills-container img {
-  width: 10vh;
-  height: 10vh;
   margin: 5px;
 }
 
 /****************/
 /* WORK SECTION */
 /****************/
+@media (max-width: 900px) {
+  .project {
+    width: 80%;
+  }
+}
+@media (min-width: 901px) and (max-width: 1300px) {
+  .project {
+    width: 70%;
+  }
+}
+@media (min-width: 1301px) {
+  .project {
+    width: 60%;
+  }
+}
 .work {
   width: 100vw;
   height: -webkit-fit-content;
@@ -490,8 +562,6 @@ section {
   justify-content: center;
 }
 .work .project {
-  width: 60%;
-  height: auto;
   overflow: hidden;
   margin-top: 10vh;
   opacity: 1;
@@ -543,6 +613,16 @@ section {
 /*******************/
 /* CONTACT SECTION */
 /*******************/
+@media (max-width: 700px) {
+  .contact-container {
+    width: 400px;
+  }
+}
+@media (min-width: 701px) {
+  .contact-container {
+    width: 500px;
+  }
+}
 .contact {
   width: 100vw;
   height: -webkit-fit-content;
@@ -555,10 +635,6 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 30vw;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
   margin-bottom: 5px;
 }
 .contact .contact-container .contact-form {
