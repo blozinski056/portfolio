@@ -33,7 +33,7 @@ export default function Contact() {
   }
 
   function openResume() {
-    window.open("/Bryce Lozinski 2022 Resume.pdf", "_blank");
+    window.open("/Bryce Lozinski Resume.pdf", "_blank");
   }
 
   window.addEventListener("scroll", revealContact);

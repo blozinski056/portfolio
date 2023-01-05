@@ -7,7 +7,7 @@ export default function Intro() {
   }
 
   function openResume() {
-    window.open("/Bryce Lozinski 2022 Resume.pdf", "_blank");
+    window.open("/Bryce Lozinski Resume.pdf", "_blank");
   }
 
   return (
@@ -28,7 +28,7 @@ export default function Intro() {
         <li>k</li>
         <li>i</li>
       </ul>
-      <h5>FULL-STACK DEVELOPER</h5>
+      <h5>FULL-STACK ENGINEER</h5>
 
       <div className="intro-buttons-container">
         <button className="intro-resume" onClick={openResume}>

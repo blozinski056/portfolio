@@ -74,7 +74,7 @@ export default function About() {
       <div className="about-container">
         <h4 className="about-text">
           I'm <span style={{ color: "rgb(0, 167, 130)" }}>Bryce</span>,
-          <br />a resourceful, self-taught full-stack developer,
+          <br />a resourceful, self-taught full-stack engineer,
           <br />
           continuing to learn and expand on my{" "}
           <span style={{ color: "rgb(0, 167, 130)" }}>tech stack.</span>
