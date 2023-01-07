@@ -32,40 +32,130 @@ export default function About() {
 
     // ANIMATIONS
 
-    // below 0.65 window height or above 0 window height
-    if (aboutTextTop > 0.65 * windowHeight || aboutTextBottom <= 0) {
-      aboutText.style.opacity = "0";
-      skillsContainer.style.opacity = "0";
+    // below 0.65 window height
+    if (aboutTextTop > 0.65 * windowHeight) {
+      aboutText.animate(
+        {
+          opacity: 0,
+          transform: "translateX(-20vw)",
+        },
+        {
+          duration: 1000,
+          fill: "forwards",
+        }
+      );
+      skillsContainer.animate(
+        {
+          opacity: 0,
+          transform: "translateX(20vw)",
+        },
+        {
+          duration: 1000,
+          fill: "forwards",
+        }
+      );
     }
     // above 0.65 window height and below 0.45 window height
     else if (
       aboutTextTop <= 0.65 * windowHeight &&
       aboutTextTop >= 0.45 * windowHeight
     ) {
-      aboutText.style.opacity = `${distPercentage}`;
-      aboutText.style.transform = `translateX(calc(-20vw + 20vw * ${distPercentage}))`;
+      aboutText.animate(
+        {
+          opacity: `${distPercentage}`,
+          transform: `translateX(calc(-20vw + 20vw * ${distPercentage}))`,
+        },
+        {
+          duration: 1000,
+          fill: "forwards",
+        }
+      );
 
-      skillsContainer.style.opacity = `${distPercentage}`;
-      skillsContainer.style.transform = `translateX(calc(20vw - 20vw * ${distPercentage}))`;
+      skillsContainer.animate(
+        {
+          opacity: `${distPercentage}`,
+          transform: `translateX(calc(20vw - 20vw * ${distPercentage}))`,
+        },
+        {
+          duration: 1000,
+          fill: "forwards",
+        }
+      );
     }
     // above 0.45 window height and below 0.1 window height
     else if (
       aboutTextTop < 0.45 * windowHeight &&
       aboutTextBottom > 0.1 * windowHeight
     ) {
-      aboutText.style.opacity = "1";
-      skillsContainer.style.opacity = "1";
+      aboutText.animate(
+        {
+          opacity: 1,
+          transform: "none",
+        },
+        {
+          duration: 1000,
+          fill: "forwards",
+        }
+      );
 
-      aboutText.style.transform = "none";
-      skillsContainer.style.transform = "none";
+      skillsContainer.animate(
+        {
+          opacity: 1,
+          transform: "none",
+        },
+        {
+          duration: 1000,
+          fill: "forwards",
+        }
+      );
     }
     // above 0.1 window height and below 0 window height
     else if (aboutTextBottom <= 0.1 * windowHeight && aboutTextBottom > 0) {
-      aboutText.style.opacity = `calc(1 - ${distPercentage2})`;
-      aboutText.style.transform = `translateX(calc(20vw * ${distPercentage2}))`;
+      aboutText.animate(
+        {
+          opacity: `calc(1 - ${distPercentage2})`,
+          transform: `translateX(calc(20vw * ${distPercentage2}))`,
+        },
+        {
+          duration: 1000,
+          fill: "forwards",
+        }
+      );
 
-      skillsContainer.style.opacity = `calc(1 - ${distPercentage2})`;
-      skillsContainer.style.transform = `translateX(calc(-20vw * ${distPercentage2}))`;
+      skillsContainer.animate(
+        {
+          opacity: `calc(1 - ${distPercentage2})`,
+          transform: `translateX(calc(-20vw * ${distPercentage2}))`,
+        },
+        {
+          duration: 1000,
+          fill: "forwards",
+        }
+      );
+    }
+    // above 0 window height
+    else if (aboutTextBottom <= 0) {
+      aboutText.animate(
+        {
+          opacity: 0,
+          transform: "translateX(20vw)",
+        },
+        {
+          duration: 1000,
+          fill: "forwards",
+        }
+      );
+
+      skillsContainer.animate(
+        {
+          opacity: 0,
+          transform: "translateX(-20vw)",
+        },
+        {
+          duration: 1000,
+          fill: "forwards",
+        }
+      );
     }
   }
 

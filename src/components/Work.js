@@ -10,7 +10,7 @@ export default function Work() {
   function revealWork() {
     const projects = document.querySelectorAll(".project");
     const travelDist1 = 0.3 * window.innerHeight;
-    const travelDist2 = 0.2 * window.innerHeight;
+    const travelDist2 = 0.1 * window.innerHeight;
 
     for (let i = 0; i < projects.length; i++) {
       const top = projects[i].getBoundingClientRect().top;
@@ -19,42 +19,78 @@ export default function Work() {
       const percentBottom = (0.2 * window.innerHeight - bottom) / travelDist2;
 
       // top below 0.7
-      if (top > 0.7 * window.innerHeight) {
-        projects[i].style.transform = "translateY(10vh)";
-        projects[i].style.opacity = "0";
+      if (top >= 0.7 * window.innerHeight) {
+        projects[i].animate(
+          {
+            opacity: 0,
+            transform: "translateY(10vh)",
+          },
+          {
+            duration: 1000,
+            fill: "forwards",
+          }
+        );
       }
       // top above 0.7 and top below 0.4
       else if (
-        top <= 0.7 * window.innerHeight &&
-        top >= 0.4 * window.innerHeight
+        top < 0.7 * window.innerHeight &&
+        top > 0.4 * window.innerHeight
       ) {
-        projects[
-          i
-        ].style.transform = `translateY(calc(10vh - 10vh * ${percentTop}))`;
-        projects[i].style.opacity = `${percentTop}`;
+        projects[i].animate(
+          {
+            opacity: `${percentTop}`,
+            transform: `translateY(calc(10vh - 10vh * ${percentTop}))`,
+          },
+          {
+            duration: 1000,
+            fill: "forwards",
+          }
+        );
       }
       // top above 0.4 and bottom below 0.2
       else if (
-        top < 0.4 * window.innerHeight &&
-        bottom > 0.2 * window.innerHeight
+        top <= 0.4 * window.innerHeight &&
+        bottom >= 0.2 * window.innerHeight
       ) {
-        projects[i].style.transform = "none";
-        projects[i].style.opacity = "1";
+        projects[i].animate(
+          {
+            opacity: 1,
+            transform: "none",
+          },
+          {
+            duration: 1000,
+            fill: "forwards",
+          }
+        );
       }
       // bottom above 0.2 and bottom below 0
       else if (
-        bottom <= 0.2 * window.innerHeight &&
-        bottom >= 0 * window.innerHeight
+        bottom < 0.2 * window.innerHeight &&
+        bottom > 0.1 * window.innerHeight
       ) {
-        projects[
-          i
-        ].style.transform = `translateY(calc(-10vh * ${percentBottom}))`;
-        projects[i].style.opacity = `calc(1 - ${percentBottom})`;
+        projects[i].animate(
+          {
+            opacity: `calc(1 - ${percentBottom})`,
+            transform: `translateY(calc(-10vh * ${percentBottom}))`,
+          },
+          {
+            duration: 1000,
+            fill: "forwards",
+          }
+        );
       }
       // bottom above 0
-      else if (bottom < 0 * window.innerHeight) {
-        projects[i].style.transform = "translateY(-10vh)";
-        projects[i].style.opacity = "0";
+      else if (bottom <= 0.1 * window.innerHeight) {
+        projects[i].animate(
+          {
+            opacity: 0,
+            transform: "translateY(-10vh)",
+          },
+          {
+            duration: 1000,
+            fill: "forwards",
+          }
+        );
       }
     }
   }
