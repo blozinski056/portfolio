@@ -11,7 +11,7 @@ It contains links to my resume, projects, and profiles:
 - [GitHub](https://github.com/blozinski056)
 
 
-![Screenshot 2023-01-09 103959](https://user-images.githubusercontent.com/47436854/211383310-803df3f9-c5ce-4f72-b804-079afe4b885d.jpg)  
+![Screenshot 2023-01-09 103959](https://user-images.githubusercontent.com/47436854/211388143-39608276-03ae-4712-a202-68ae7765a672.mp4)  
 
 ### Created using:  
 
