@@ -11,9 +11,7 @@ It contains links to my resume, projects, and profiles:
 - [LinkedIn](https://www.linkedin.com/in/bryce-lozinski/)
 - [GitHub](https://github.com/blozinski056)
 
-In the project directory, you can run:
-
-![Screenshot 2023-01-09 103959](https://user-images.githubusercontent.com/47436854/211383310-803df3f9-c5ce-4f72-b804-079afe4b885d.jpg)
+[![Screenshot 2023-01-09 103959](https://user-images.githubusercontent.com/47436854/211383310-803df3f9-c5ce-4f72-b804-079afe4b885d.jpg)](https://blozinski.com)
 
 ### Created using:
 
