@@ -28,7 +28,7 @@ export default function Intro() {
         <li>k</li>
         <li>i</li>
       </ul>
-      <h5>FULL-STACK ENGINEER</h5>
+      <h5>FRONTEND DEVELOPER</h5>
 
       <div className="intro-buttons-container">
         <button className="intro-resume" onClick={openResume}>
