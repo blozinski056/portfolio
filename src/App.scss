@@ -459,7 +459,7 @@ section {
     position: relative;
 
     .project-overlay {
-      @include w-h(100%, 100%);
+      @include w-h(100%, calc(100% - 4px));
       @include flexbox;
       position: absolute;
       top: 0;
@@ -470,7 +470,7 @@ section {
 
       &:hover {
         opacity: 1;
-        backdrop-filter: blur(5px);
+        background-color: rgba(0, 0, 0, 0.7);
         transition: 0.3s ease;
       }
 
@@ -490,8 +490,11 @@ section {
       }
     }
 
-    .video-player {
+    .project-tile {
       @include w-h(100%, 100%);
+      .video-player {
+        @include w-h(100%, 100%);
+      }
     }
   }
 }
