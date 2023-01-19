@@ -23,7 +23,7 @@ export default function Work() {
         projects[i].animate(
           {
             opacity: 0,
-            transform: "translateY(10vh)",
+            transform: "translateY(10vh) scale(0.8)",
           },
           {
             duration: 1000,
@@ -39,7 +39,7 @@ export default function Work() {
         projects[i].animate(
           {
             opacity: `${percentTop}`,
-            transform: `translateY(calc(10vh - 10vh * ${percentTop}))`,
+            transform: `translateY(calc(10vh - 10vh * ${percentTop})) scale(calc(0.8 + 0.2 * ${percentTop}))`,
           },
           {
             duration: 1000,
@@ -71,7 +71,7 @@ export default function Work() {
         projects[i].animate(
           {
             opacity: `calc(1 - ${percentBottom})`,
-            transform: `translateY(calc(-10vh * ${percentBottom}))`,
+            transform: `translateY(calc(-10vh * ${percentBottom})) scale(calc(1 - 0.2 * ${percentBottom}))`,
           },
           {
             duration: 1000,
@@ -84,7 +84,7 @@ export default function Work() {
         projects[i].animate(
           {
             opacity: 0,
-            transform: "translateY(-10vh)",
+            transform: "translateY(-10vh) scale(0.8)",
           },
           {
             duration: 1000,
