@@ -158,7 +158,7 @@ section {
   @include flexbox($fd: column);
   position: absolute;
   left: 50%;
-  bottom: 5vh;
+  bottom: 10vh;
   opacity: 0;
   animation: 1s ease-in-out 3s mouse-appear, infinite 3s ease 4s bounce;
 

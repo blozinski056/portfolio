@@ -26,8 +26,6 @@ export default function App() {
     const mouseDiv = document.querySelector(".scroll-down");
     const elmPosition = mouseDiv.getBoundingClientRect().bottom;
 
-    console.log(elmPosition, 0.75 * window.innerHeight);
-
     if (elmPosition < 0.75 * window.innerHeight) {
       mouseDiv.classList.add("disappear");
       window.removeEventListener("scroll", removeMouseArrow);

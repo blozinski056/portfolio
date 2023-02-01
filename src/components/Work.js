@@ -177,6 +177,33 @@ export default function Work() {
           </video>
         </div>
       </div>
+
+      <div className="project 4">
+        <div className="project-overlay 4">
+          <button
+            className="link"
+            onClick={() => open("https://www.order8game.com/")}
+          >
+            Order 8
+          </button>
+        </div>
+        <div className="project-tile">
+          <video
+            className="video-player"
+            id="vid2"
+            autoPlay
+            playsInline
+            muted
+            loop
+          >
+            <source
+              className="video-player-source"
+              src="/videos/number-game.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
     </section>
   );
 }

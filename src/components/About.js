@@ -172,6 +172,7 @@ export default function About() {
 
         <div className="skills-container">
           <img src="/images/react-color.png" alt="" />
+          <img src="/images/typescript.png" alt="" />
           <img src="/images/node-js.png" alt="" />
           <img src="/images/express-color.png" alt="" />
           <img src="/images/postgresql.png" alt="" />
