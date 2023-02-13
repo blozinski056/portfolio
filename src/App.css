@@ -1,17 +1,3 @@
-@-webkit-keyframes spin1 {
-  0% {
-    transform: rotate(45deg) rotate3d(1, 1, 0, 0deg);
-    z-index: 9;
-  }
-  50% {
-    transform: rotate(45deg) rotate3d(1, 1, 0, 180deg);
-    z-index: 9;
-  }
-  100% {
-    transform: rotate(45deg) rotate3d(1, 1, 0, 355deg);
-    z-index: 11;
-  }
-}
 @keyframes spin1 {
   0% {
     transform: rotate(45deg) rotate3d(1, 1, 0, 0deg);
@@ -24,20 +10,6 @@
   100% {
     transform: rotate(45deg) rotate3d(1, 1, 0, 355deg);
     z-index: 11;
-  }
-}
-@-webkit-keyframes spin2 {
-  0% {
-    transform: rotate(45deg) rotate3d(1, 1, 0, 0deg);
-    z-index: 11;
-  }
-  50% {
-    transform: rotate(45deg) rotate3d(1, 1, 0, 180deg);
-    z-index: 9;
-  }
-  100% {
-    transform: rotate(45deg) rotate3d(1, 1, 0, 355deg);
-    z-index: 9;
   }
 }
 @keyframes spin2 {
@@ -54,16 +26,6 @@
     z-index: 9;
   }
 }
-@-webkit-keyframes appear {
-  0% {
-    opacity: 0;
-    transform: translateY(5vh);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 @keyframes appear {
   0% {
     opacity: 0;
@@ -72,20 +34,6 @@
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-@-webkit-keyframes mouse-appear {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 5vh);
-  }
-  80% {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, 0);
   }
 }
 @keyframes mouse-appear {
@@ -102,16 +50,6 @@
     transform: translate(-50%, 0);
   }
 }
-@-webkit-keyframes mouse-disappear {
-  0% {
-    opacity: 1;
-    transform: translateX(-50%);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -10vh);
-  }
-}
 @keyframes mouse-disappear {
   0% {
     opacity: 1;
@@ -120,24 +58,6 @@
   100% {
     opacity: 0;
     transform: translate(-50%, -10vh);
-  }
-}
-@-webkit-keyframes bounce {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-  10% {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-  40% {
-    opacity: 1;
-    transform: translate(-50%, 50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, 0);
   }
 }
 @keyframes bounce {
@@ -158,20 +78,6 @@
     transform: translate(-50%, 0);
   }
 }
-@-webkit-keyframes revealLinks {
-  0% {
-    opacity: 0;
-    transform: translateY(10vh);
-  }
-  80% {
-    opacity: 1;
-    transform: translateY(-3vh);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
 @keyframes revealLinks {
   0% {
     opacity: 0;
@@ -180,16 +86,6 @@
   80% {
     opacity: 1;
     transform: translateY(-3vh);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-@-webkit-keyframes dropIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20vh);
   }
   100% {
     opacity: 1;
@@ -240,12 +136,10 @@ section {
   left: 50%;
   bottom: 10vh;
   opacity: 0;
-  -webkit-animation: 1s ease-in-out 3s mouse-appear, infinite 3s ease 4s bounce;
-          animation: 1s ease-in-out 3s mouse-appear, infinite 3s ease 4s bounce;
+  animation: 1s ease-in-out 3s mouse-appear, infinite 3s ease 4s bounce;
 }
 .scroll-down.disappear {
-  -webkit-animation: 0.5s ease mouse-disappear;
-          animation: 0.5s ease mouse-disappear;
+  animation: 0.5s ease mouse-disappear;
 }
 .scroll-down .mouse {
   width: 35px;
@@ -297,14 +191,12 @@ section {
 .logo-container .logo-box-1 {
   border-top: 3px solid rgb(0, 167, 130);
   border-right: 3px solid rgb(0, 167, 130);
-  -webkit-animation: spin1 7s linear infinite;
-          animation: spin1 7s linear infinite;
+  animation: spin1 7s linear infinite;
 }
 .logo-container .logo-box-2 {
   border-left: 3px solid rgb(0, 167, 130);
   border-bottom: 3px solid rgb(0, 167, 130);
-  -webkit-animation: spin2 7s linear infinite;
-          animation: spin2 7s linear infinite;
+  animation: spin2 7s linear infinite;
 }
 
 /*****************/
@@ -318,7 +210,7 @@ section {
     font-size: 15px;
   }
   .intro .intro-resume,
-.intro .intro-contact {
+  .intro .intro-contact {
     width: 100px;
     height: 30px;
     font-size: 15px;
@@ -334,7 +226,7 @@ section {
     font-size: 20px;
   }
   .intro .intro-resume,
-.intro .intro-contact {
+  .intro .intro-contact {
     width: 143px;
     height: 38px;
     font-size: 20px;
@@ -350,7 +242,7 @@ section {
     font-size: 30px;
   }
   .intro .intro-resume,
-.intro .intro-contact {
+  .intro .intro-contact {
     width: 143px;
     height: 38px;
     font-size: 20px;
@@ -381,66 +273,51 @@ section {
   font-weight: 700;
   letter-spacing: 1px;
   opacity: 0;
-  -webkit-animation: 0.2s ease-in-out dropIn forwards;
-          animation: 0.2s ease-in-out dropIn forwards;
+  animation: 0.2s ease-in-out dropIn forwards;
 }
 .intro ul li:nth-child(1) {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 .intro ul li:nth-child(2) {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 .intro ul li:nth-child(3) {
-  -webkit-animation-delay: 0.6s;
-          animation-delay: 0.6s;
+  animation-delay: 0.6s;
 }
 .intro ul li:nth-child(4) {
-  -webkit-animation-delay: 0.7s;
-          animation-delay: 0.7s;
+  animation-delay: 0.7s;
 }
 .intro ul li:nth-child(5) {
-  -webkit-animation-delay: 0.8s;
-          animation-delay: 0.8s;
+  animation-delay: 0.8s;
 }
 .intro ul li:nth-child(7) {
-  -webkit-animation-delay: 0.9s;
-          animation-delay: 0.9s;
+  animation-delay: 0.9s;
 }
 .intro ul li:nth-child(8) {
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  animation-delay: 1s;
 }
 .intro ul li:nth-child(9) {
-  -webkit-animation-delay: 1.1s;
-          animation-delay: 1.1s;
+  animation-delay: 1.1s;
 }
 .intro ul li:nth-child(10) {
-  -webkit-animation-delay: 1.2s;
-          animation-delay: 1.2s;
+  animation-delay: 1.2s;
 }
 .intro ul li:nth-child(11) {
-  -webkit-animation-delay: 1.3s;
-          animation-delay: 1.3s;
+  animation-delay: 1.3s;
 }
 .intro ul li:nth-child(12) {
-  -webkit-animation-delay: 1.4s;
-          animation-delay: 1.4s;
+  animation-delay: 1.4s;
 }
 .intro ul li:nth-child(13) {
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
+  animation-delay: 1.5s;
 }
 .intro ul li:nth-child(14) {
-  -webkit-animation-delay: 1.6s;
-          animation-delay: 1.6s;
+  animation-delay: 1.6s;
 }
 .intro h5 {
   letter-spacing: 2px;
   opacity: 0;
-  -webkit-animation: 0.7s ease-in-out 1.8s appear forwards;
-          animation: 0.7s ease-in-out 1.8s appear forwards;
+  animation: 0.7s ease-in-out 1.8s appear forwards;
 }
 .intro .intro-buttons-container {
   margin-top: 3%;
@@ -455,8 +332,7 @@ section {
   color: gray;
   font-weight: 500;
   transition-duration: 0.3s;
-  -webkit-animation: 0.7s ease-in-out 2.1s appear forwards;
-          animation: 0.7s ease-in-out 2.1s appear forwards;
+  animation: 0.7s ease-in-out 2.1s appear forwards;
 }
 .intro .intro-buttons-container .intro-resume:hover,
 .intro .intro-buttons-container .intro-contact:hover {
@@ -553,7 +429,6 @@ section {
 }
 .work {
   width: 100vw;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   display: flex;
@@ -587,10 +462,8 @@ section {
   transition: 0.3s ease;
 }
 .work .project .project-overlay .link {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   padding: 1%;
@@ -628,7 +501,6 @@ section {
 }
 .contact {
   width: 100vw;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin-top: 15vh;
@@ -758,14 +630,11 @@ section {
   transform: translateY(10vh);
 }
 .contact .contact-container .contact-links .link-github.reveal {
-  -webkit-animation: 0.3s ease-in 1s forwards revealLinks;
-          animation: 0.3s ease-in 1s forwards revealLinks;
+  animation: 0.3s ease-in 1s forwards revealLinks;
 }
 .contact .contact-container .contact-links .link-linkedin.reveal {
-  -webkit-animation: 0.3s ease-in 1.2s forwards revealLinks;
-          animation: 0.3s ease-in 1.2s forwards revealLinks;
+  animation: 0.3s ease-in 1.2s forwards revealLinks;
 }
 .contact .contact-container .contact-links .link-resume.reveal {
-  -webkit-animation: 0.3s ease-in 1.4s forwards revealLinks;
-          animation: 0.3s ease-in 1.4s forwards revealLinks;
+  animation: 0.3s ease-in 1.4s forwards revealLinks;
 }/*# sourceMappingURL=App.css.map */
