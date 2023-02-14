@@ -54,6 +54,7 @@ export default function Contact() {
 
   return (
     <section className="contact">
+      <h1 className="section_title">Contact</h1>
       <div className="contact-container">
         <form className="contact-form" onSubmit={sendEmail} autoComplete="off">
           <h1 className="contact-title hidden">Send a Message</h1>

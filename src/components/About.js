@@ -19,7 +19,7 @@ export default function About() {
           },
         ],
         {
-          duration: 1500,
+          duration: 1000,
           easing: "ease-in",
           fill: "forwards",
         }
@@ -30,6 +30,7 @@ export default function About() {
 
   return (
     <section className="about">
+      <h1>About</h1>
       <div className="about_container">
         <div className="img_container">
           <img src="/images/profile-picture.JPG" alt="" />
@@ -37,19 +38,26 @@ export default function About() {
         <div className="info_container">
           <p>
             Hi, I'm <span>Bryce</span>!
-            <br />I am a self-taught front-end engineer with back-end experience
-            and a little bit of an ultimate frisbee addiction.
+          </p>
+          <p>
+            I am a self-taught front-end engineer with back-end experience and a
+            little bit of an ultimate frisbee addiction.
+          </p>
+          <p>
+            In my free time I love to play board games, play video games, grow
+            plants, mix drinks, check out new breweries, and be outside at the
+            beach or in the mountains!
           </p>
           <div className="skills_container">
-            <img src="/images/react-color.png" alt="" />
-            <img src="/images/nextjs.png" alt="" />
+            <img src="/images/react.png" alt="" />
+            <img src="/images/nextjs-dark.png" alt="" />
             <img src="/images/node-js.png" alt="" />
             <img src="/images/express-color.png" alt="" />
             <img src="/images/postgresql.png" alt="" />
             <img src="/images/typescript.png" alt="" />
+            <img src="/images/sass-color.png" alt="" />
             <img src="/images/js-color.png" alt="" />
             <img src="/images/html5-color.png" alt="" />
-            <img src="/images/sass-color.png" alt="" />
             <img src="/images/css3-color.png" alt="" />
             <img src="/images/git-color.png" alt="" />
           </div>

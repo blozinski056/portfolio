@@ -39,8 +39,9 @@ export default function App() {
       </div>
       <div className="triangle_down"></div>
       <About />
-      {/* <Work /> */}
-      {/* <Contact /> */}
+      <div className="triangle_up"></div>
+      <Work />
+      <Contact />
     </div>
   );
 }
