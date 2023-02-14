@@ -37,6 +37,7 @@ export default function App() {
         <img src="/images/mouse-green.png" alt="" className="mouse" />
         <img src="/images/down-arrows-green.png" alt="" className="arrows" />
       </div>
+      <div className="triangle_down"></div>
       <About />
       {/* <Work /> */}
       {/* <Contact /> */}

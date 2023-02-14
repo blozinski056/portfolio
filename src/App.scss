@@ -223,6 +223,15 @@ body {
   }
 }
 
+.triangle_down {
+  width: 100vw;
+  height: 0;
+  border-top: 20vh solid $color-black;
+  border-left: 30vw solid transparent;
+  border-right: 70vw solid transparent;
+  background-color: $color-white;
+}
+
 /*****************/
 /* INTRO SECTION */
 /*****************/
@@ -281,8 +290,8 @@ body {
 }
 
 .intro {
-  @include w-h(100vw, 100vh);
-  @include flexbox($fd: column);
+  @include w-h(100vw, 70vh);
+  @include flexbox($fd: column, $jc: flex-end);
   position: relative;
   transform: translateY(-5vh);
 
@@ -355,69 +364,20 @@ body {
 /*****************/
 /* ABOUT SECTION */
 /*****************/
-@media (max-width: 1500px) {
-  .about-container {
-    margin: 0 5vw;
-  }
-}
-
-@media (min-width: 1501px) {
-  .about-container {
-    margin: 0 20vw;
-  }
-}
-
-@media (max-width: 1300px) {
-  .about-text {
-    font-size: 20px;
-  }
-
-  .skills-container {
-    margin-top: 25px;
-
-    img {
-      @include w-h(45px, 45px);
-    }
-  }
-}
-
-@media (min-width: 1301px) {
-  .about-text {
-    font-size: 30px;
-  }
-
-  .skills-container {
-    margin-top: 50px;
-
-    img {
-      @include w-h(90px, 90px);
-    }
-  }
-}
-
-@media (max-width: 600px) {
-  .skills-container {
-    @include flexbox;
-    width: 275px;
-    flex-wrap: wrap;
-  }
-}
-
 .about {
   @include w-h(100vw, 50vh);
   @include flexbox($ai: flex-start);
-  padding-top: 5vh;
+  background-color: $color-white;
+  padding-top: 10vh;
 
   .about_container {
-    @include w-h(60vw, auto);
-    @include flexbox($ai: flex-start, $jc: space-between);
-    box-shadow: 0 0 20px $color-green;
-    border: solid 2px $color-green;
-    padding: 10px;
+    @include w-h(58vw, auto);
+    @include flexbox($ai: flex-start, $jc: center);
+    padding: 20px;
+    opacity: 0;
 
     .img_container {
       @include w-h(200px, 200px);
-      // box-shadow: 0 0 10px $color-green;
       border-radius: 50%;
       overflow: hidden;
 
@@ -429,15 +389,40 @@ body {
     }
 
     .info_container {
-      @include w-h(80%, 40vh);
+      @include w-h(70%, auto);
+      @include flexbox($fd: column, $jc: flex-start);
       margin-left: 20px;
       margin-top: 20px;
 
       p {
         font-size: 30px;
         font-weight: 700;
+        // text-align: center;
+        margin-bottom: 30px;
+        color: $color-black;
+
         span {
           color: $color-green;
+          transition: 0.5s;
+          cursor: pointer;
+
+          &:hover {
+            text-shadow: 0 0 5px $color-green;
+            transition: 0.5s;
+          }
+        }
+      }
+
+      .skills_container {
+        @include w-h(80%, auto);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 60px);
+        justify-content: center;
+
+        img {
+          @include w-h(50px, 50px);
+          object-fit: contain;
+          margin: 5px;
         }
       }
     }
