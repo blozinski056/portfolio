@@ -7,9 +7,6 @@ import Work from "./components/Work";
 import Contact from "./components/Contact";
 
 export default function App() {
-  // window.addEventListener("scroll", revealAbout);
-
-  // function reveal()
   // Scroll to top when refreshed
   window.onbeforeunload = function () {
     const container = document.querySelector(".container");
@@ -36,13 +33,13 @@ export default function App() {
     <div className="container">
       <Logo />
       <Intro />
-      <About />
-      <Work />
-      <Contact />
       <div className="scroll-down">
         <img src="/images/mouse-green.png" alt="" className="mouse" />
         <img src="/images/down-arrows-green.png" alt="" className="arrows" />
       </div>
+      <About />
+      {/* <Work /> */}
+      {/* <Contact /> */}
     </div>
   );
 }

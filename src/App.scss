@@ -149,16 +149,11 @@ body {
   background-color: $color-black;
 }
 
-section {
-  @include flexbox;
-  position: relative;
-}
-
 .scroll-down {
   @include flexbox($fd: column);
   position: absolute;
   left: 50%;
-  bottom: 10vh;
+  bottom: 15vh;
   opacity: 0;
   animation: 1s ease-in-out 3s mouse-appear, infinite 3s ease 4s bounce;
 
@@ -286,10 +281,10 @@ section {
 }
 
 .intro {
-  @include w-h(100vw, 80vh);
-  flex-direction: column;
-  padding-top: 10vh;
+  @include w-h(100vw, 100vh);
+  @include flexbox($fd: column);
   position: relative;
+  transform: translateY(-5vh);
 
   li,
   h5 {
@@ -307,7 +302,7 @@ section {
       font-weight: 700;
       letter-spacing: 1px;
       opacity: 0;
-      animation: 0.2s ease-in-out dropIn forwards;
+      animation: dropIn 0.2s ease-in-out forwards;
 
       @for $i from 1 through 5 {
         &:nth-child(#{$i}) {
@@ -408,24 +403,65 @@ section {
   }
 }
 
-.about-container {
-  @include flexbox($fd: column);
+.about {
   @include w-h(100vw, 50vh);
+  @include flexbox($ai: flex-start);
+  padding-top: 5vh;
 
-  .about-text {
-    color: $color-white;
-    text-align: center;
-    opacity: 0;
-  }
+  .about_container {
+    @include w-h(60vw, auto);
+    @include flexbox($ai: flex-start, $jc: space-between);
+    box-shadow: 0 0 20px $color-green;
+    border: solid 2px $color-green;
+    padding: 10px;
 
-  .skills-container {
-    opacity: 0;
+    .img_container {
+      @include w-h(200px, 200px);
+      // box-shadow: 0 0 10px $color-green;
+      border-radius: 50%;
+      overflow: hidden;
 
-    img {
-      margin: 5px;
+      img {
+        @include w-h(100%, 100%);
+        object-fit: cover;
+        transform: scale(110%) translateY(5px);
+      }
+    }
+
+    .info_container {
+      @include w-h(80%, 40vh);
+      margin-left: 20px;
+      margin-top: 20px;
+
+      p {
+        font-size: 30px;
+        font-weight: 700;
+        span {
+          color: $color-green;
+        }
+      }
     }
   }
 }
+
+// .about-container {
+//   @include flexbox($fd: column, $jc: flex-start);
+//   @include w-h(100vw, 100vh);
+
+//   .about-text {
+//     color: $color-white;
+//     text-align: center;
+//     opacity: 0;
+//   }
+
+//   .skills-container {
+//     opacity: 0;
+
+//     img {
+//       margin: 5px;
+//     }
+//   }
+// }
 
 /****************/
 /* WORK SECTION */

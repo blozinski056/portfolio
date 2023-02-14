@@ -119,14 +119,6 @@ body {
   background-color: rgb(26, 26, 26);
 }
 
-section {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
 .scroll-down {
   display: flex;
   flex-direction: column;
@@ -134,7 +126,7 @@ section {
   justify-content: center;
   position: absolute;
   left: 50%;
-  bottom: 10vh;
+  bottom: 15vh;
   opacity: 0;
   animation: 1s ease-in-out 3s mouse-appear, infinite 3s ease 4s bounce;
 }
@@ -252,10 +244,13 @@ section {
 }
 .intro {
   width: 100vw;
-  height: 80vh;
+  height: 100vh;
+  display: flex;
   flex-direction: column;
-  padding-top: 10vh;
+  align-items: center;
+  justify-content: center;
   position: relative;
+  transform: translateY(-5vh);
 }
 .intro li,
 .intro h5 {
@@ -273,7 +268,7 @@ section {
   font-weight: 700;
   letter-spacing: 1px;
   opacity: 0;
-  animation: 0.2s ease-in-out dropIn forwards;
+  animation: dropIn 0.2s ease-in-out forwards;
 }
 .intro ul li:nth-child(1) {
   animation-delay: 0.4s;
@@ -389,24 +384,51 @@ section {
     flex-wrap: wrap;
   }
 }
-.about-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.about {
   width: 100vw;
   height: 50vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 5vh;
 }
-.about-container .about-text {
-  color: rgb(230, 255, 255);
-  text-align: center;
-  opacity: 0;
+.about .about_container {
+  width: 60vw;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-shadow: 0 0 20px rgb(0, 167, 130);
+  border: solid 2px rgb(0, 167, 130);
+  padding: 10px;
 }
-.about-container .skills-container {
-  opacity: 0;
+.about .about_container .img_container {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
 }
-.about-container .skills-container img {
-  margin: 5px;
+.about .about_container .img_container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: scale(110%) translateY(5px);
+}
+.about .about_container .info_container {
+  width: 80%;
+  height: 40vh;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.about .about_container .info_container p {
+  font-size: 30px;
+  font-weight: 700;
+}
+.about .about_container .info_container p span {
+  color: rgb(0, 167, 130);
 }
 
 /****************/
