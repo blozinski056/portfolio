@@ -5,6 +5,34 @@ export default function Work() {
     window.open(url, "_blank");
   }
 
+  window.addEventListener("scroll", showWork);
+
+  function showWork() {
+    const workContainer = document.querySelector(".work_container");
+    const containerTop = workContainer.getBoundingClientRect().top;
+    const threshold = window.innerHeight * 0.8;
+
+    if (containerTop <= threshold) {
+      workContainer.animate(
+        [
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+          },
+        ],
+        {
+          duration: 1000,
+          easing: "ease-in",
+          fill: "forwards",
+        }
+      );
+
+      window.removeEventListener("scroll", showWork);
+    }
+  }
+
   return (
     <section className="work">
       <h1>Projects</h1>

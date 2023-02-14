@@ -471,6 +471,7 @@ body {
     @include w-h(100%, auto);
     @include flexbox;
     flex-wrap: wrap;
+    opacity: 0;
 
     .work_tile {
       @include w-h(350px, 350px);
