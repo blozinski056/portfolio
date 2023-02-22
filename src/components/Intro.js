@@ -12,31 +12,33 @@ export default function Intro() {
 
   return (
     <section className="intro">
-      <ul>
-        <li>B</li>
-        <li>r</li>
-        <li>y</li>
-        <li>c</li>
-        <li>e</li>
-        <li>&nbsp;</li>
-        <li>L</li>
-        <li>o</li>
-        <li>z</li>
-        <li>i</li>
-        <li>n</li>
-        <li>s</li>
-        <li>k</li>
-        <li>i</li>
-      </ul>
-      <h5>FRONT-END ENGINEER</h5>
+      <div className="intro_container">
+        <ul>
+          <li>B</li>
+          <li>r</li>
+          <li>y</li>
+          <li>c</li>
+          <li>e</li>
+          <li>&nbsp;</li>
+          <li>L</li>
+          <li>o</li>
+          <li>z</li>
+          <li>i</li>
+          <li>n</li>
+          <li>s</li>
+          <li>k</li>
+          <li>i</li>
+        </ul>
+        <h5>FRONT-END ENGINEER</h5>
 
-      <div className="intro-buttons-container">
-        <button className="intro-resume" onClick={openResume}>
-          RESUME
-        </button>
-        <button className="intro-contact" onClick={contact}>
-          CONTACT
-        </button>
+        <div className="intro-buttons-container">
+          <button className="intro-resume" onClick={openResume}>
+            RESUME
+          </button>
+          <button className="intro-contact" onClick={contact}>
+            CONTACT
+          </button>
+        </div>
       </div>
     </section>
   );
