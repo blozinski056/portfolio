@@ -4,14 +4,16 @@ Check out my [portfolio website](https://blozinski.com)!
 
 It contains links to my resume, projects, and profiles:
 
-- [Resume](https://github.com/blozinski056/portfolio/files/10376013/Bryce.Lozinski.Resume.pdf)
+- [Resume](https://github.com/blozinski056/portfolio/files/10960063/Bryce.Lozinski.Resume.pdf)
+- Project: [got coffee?](https://gotcoffeeshop.com/)
+- Project: [Order 8](https://order8game.com/)
 - Project: [RemindMe](https://www.remindmenotes.com/)
 - Project: [MovieTracker](https://www.movietrackerlist.com/)
 - Project: [EinSite](https://www.einsiteecomm.com/)
 - [LinkedIn](https://www.linkedin.com/in/bryce-lozinski/)
 - [GitHub](https://github.com/blozinski056)
 
-[![Screenshot 2023-01-09 103959](https://user-images.githubusercontent.com/47436854/211383310-803df3f9-c5ce-4f72-b804-079afe4b885d.jpg)](https://blozinski.com)
+[![Screenshot 2023-01-09 103959](https://user-images.githubusercontent.com/47436854/224784370-c7461f57-f075-49c6-9f10-284c5855feea.png)](https://blozinski.com)
 
 ### Created with:
 
