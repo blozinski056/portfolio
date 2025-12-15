@@ -5,12 +5,12 @@ Check out my [portfolio website](https://blozinski.com)!
 It contains links to my resume, projects, and profiles:
 
 - [Resume](https://github.com/blozinski056/portfolio/files/10960063/Bryce.Lozinski.Resume.pdf)
-- Project: [got coffee?](https://gotcoffeeshop.com/)
-- Project: [Order 8](https://order8game.com/)
-- Project: [RemindMe](https://www.remindmenotes.com/)
-- Project: [MovieTracker](https://www.movietrackerlist.com/)
+- Project: [got coffee?](gotcoffeeshop.netlify.app)
+- Project: [Order 8](order8game.netlify.app)
+- Project: [RemindMe](remind-me-notes.netlify.app)
+- Project: [MovieTracker](bryce-movie-tracker.netlify.app)
 - [LinkedIn](https://www.linkedin.com/in/bryce-lozinski/)
-- [GitHub](https://github.com/blozinski056)
+- [GitHub Repositories]([https://github.com/blozinski056](https://github.com/blozinski056?tab=repositories))
 
 Projects not shown on my portfolio:
 - Real Estate Personal Site for my friend's mother: [Karen Parcell Homes](karen-parcell.netlify.app)
