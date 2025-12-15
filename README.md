@@ -14,7 +14,7 @@ It contains links to my resume, projects, and profiles:
 
 Projects not shown on my portfolio:
 - Real Estate Personal Site for my friend's mother: [Karen Parcell Homes](karen-parcell.netlify.app)
-- Ecommerce site: [Einsite](einsite.netlify.app)
+- Ecommerce site: [EinSite](einsite.netlify.app)
 - Project built in less than 6 hours for job interview that utilizes an API call: [Star Wars Comparison](https://star-wars-comparison.netlify.app/)
 
 [![Screenshot 2023-01-09 103959](https://user-images.githubusercontent.com/47436854/224784370-c7461f57-f075-49c6-9f10-284c5855feea.png)](https://blozinski.com)
